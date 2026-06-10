@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/scc749/nimbus-blog-api/internal/repo"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo"
 )
 
 var (

@@ -1,6 +1,6 @@
-# Nimbus Blog API
+# Xiaoqing Blog API
 
-Nimbus Blog 的后端服务，采用 Clean Architecture 分层设计，提供后台管理与公开接口两套 API。
+Xiaoqing Blog 的后端服务，采用 Clean Architecture 分层设计，提供后台管理与公开接口两套 API。
 
 ## 概览
 
@@ -83,6 +83,7 @@ docker run -d --name nimbus-minio \
 ```
 
 MinIO 初始化建议：
+
 - 在 MinIO 控制台创建 bucket：`nimbus-files`（或与配置文件保持一致）
 - 控制台默认地址：`http://localhost:9001`
 
@@ -94,12 +95,14 @@ MinIO 初始化建议：
 - 配置结构体：[config/config.go](./config/config.go)
 
 MinIO 对外访问基址（`minio.external_base_url`）：
+
 - 用途：API 对外返回的“可访问 URL”会基于该地址进行改写（解决 `minio.endpoint` 使用内网地址/localhost 导致前端拿到的 URL 不可访问的问题）
 - 本地开发：通常与 `minio.endpoint` 一致，例如 `http://localhost:9000`
 - 部署环境：
   - 若 MinIO 只在内网可访问（例如 `minio.endpoint=minio:9000`），对外通过反向代理暴露为 `https://your-domain/minio`，则设置 `minio.external_base_url=https://your-domain/minio`
 
 建议在本地/测试环境也替换以下敏感项（不要把真实密钥提交到仓库）：
+
 - `postgres.password`
 - `redis.password`
 - `minio.access_key` / `minio.secret_key`
@@ -123,6 +126,7 @@ go run ./cmd/migrate
 ```
 
 常用动作：
+
 - `-action up|down|steps|force|version|drop`
 - `-steps N`：用于 `down/steps`
 - `-to VERSION`：用于 `force`
@@ -134,6 +138,7 @@ go run ./cmd/app
 ```
 
 健康检查：
+
 - `GET /healthz`
 
 ## API 概览
@@ -154,6 +159,7 @@ Swagger 注解定义 BasePath 为 `/api`（见 [cmd/app/main.go](./cmd/app/main.
 - User access token：`Authorization: Bearer <token>`
 
 更完整的设计说明：
+
 - 用户认证（JWT + refresh）：[DESIGN_USER_AUTH.md](./DESIGN_USER_AUTH.md)
 - 管理端认证（Session + 2FA）：[DESIGN_ADMIN_AUTH.md](./DESIGN_ADMIN_AUTH.md)
 
@@ -169,11 +175,12 @@ swagger:
 ```
 
 开启后可访问：
+
 - `GET /swagger/*`
 
 ### 生成文档
 
-项目引入 docs 包（`cmd/app/main.go` 中 `_ "github.com/scc749/nimbus-blog-api/docs"`），因此需要在更新注解后重新生成：
+项目引入 docs 包（`cmd/app/main.go` 中 `_ "github.com/QING520-MAKER/Xiaoqing-blog-api/docs"`），因此需要在更新注解后重新生成：
 
 ```bash
 go install github.com/swaggo/swag/cmd/swag@latest
@@ -195,12 +202,14 @@ wire
 ```
 
 说明：
+
 - 修改 `internal/app/wire.go` 的 provider 后，需要重新执行 `wire` 生成 `wire_gen.go`
 - 通常仅在调整依赖注入关系时需要执行；日常开发不必频繁运行
 
 ### 代码生成（GORM Gen）
 
 GORM Gen 入口：`cmd/gen/main.go`，生成目标目录：
+
 - `internal/repo/persistence/gen/model`
 - `internal/repo/persistence/gen/query`
 
@@ -209,6 +218,7 @@ go run ./cmd/gen
 ```
 
 说明：
+
 - Gen 依赖可用的 Postgres 连接与最新的 schema，建议在迁移完成后执行
 
 ### 密钥生成工具
@@ -220,6 +230,7 @@ go run ./cmd/keys -yaml
 ```
 
 常用参数：
+
 - `-access-bytes`（默认 32）
 - `-refresh-bytes`（默认 64）
 - `-key-bytes`（默认 32）
@@ -234,7 +245,7 @@ go test ./...
 （Swagger 格式校验测试位于 `internal/controller/http/swagger_test.go`）
 
 ```bash
-go build -o dist/nimbus-blog-api ./cmd/app
+go build -o dist/Xiaoqing-blog-api ./cmd/app
 go build -o dist/migrate ./cmd/migrate
 ```
 

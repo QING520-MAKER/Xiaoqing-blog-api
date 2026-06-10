@@ -17,7 +17,7 @@ import (
 
 	"gorm.io/plugin/dbresolver"
 
-	"github.com/scc749/nimbus-blog-api/internal/repo/persistence/gen/model"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo/persistence/gen/model"
 )
 
 func newFeedback(db *gorm.DB, opts ...gen.DOOption) feedback {

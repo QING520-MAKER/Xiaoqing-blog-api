@@ -1,4 +1,4 @@
-module github.com/scc749/nimbus-blog-api
+module github.com/QING520-MAKER/Xiaoqing-blog-api
 
 go 1.25.5
 

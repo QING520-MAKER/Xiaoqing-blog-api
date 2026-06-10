@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"time"
 
+	sharedresp "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/shared"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/v1/response"
 	"github.com/gofiber/fiber/v3"
-	sharedresp "github.com/scc749/nimbus-blog-api/internal/controller/http/shared"
-	"github.com/scc749/nimbus-blog-api/internal/controller/http/v1/response"
 )
 
 const _defaultFileURLExpiry = 1 * time.Hour

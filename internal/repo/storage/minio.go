@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo"
 	minio "github.com/minio/minio-go/v7"
-	"github.com/scc749/nimbus-blog-api/internal/repo"
 )
 
 // minioStore implements repo.ObjectStore using MinIO Go SDK v7.

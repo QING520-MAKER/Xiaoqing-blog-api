@@ -6,6 +6,7 @@
 更新策略：以代码为准，发现不一致优先更新文档
 
 ## 目录（阅读顺序）
+
 - 项目架构（层次与依赖方向）
 - 目录结构规范（项目地图）
 - 命名规范（包/文件/结构体/方法）
@@ -33,20 +34,21 @@
 
 采用 **Clean Architecture（整洁架构）**，分层如下：
 
-| 层级 | 目录 | 职责 | 依赖方向 |
-|------|------|------|---------|
-| Entry Point | `cmd/` | 程序入口（app/gen/keys/migrate） | 向内 |
-| Controller | `internal/controller/http/` | HTTP 路由、请求解析、响应构建 | 依赖 usecase |
-| Use Case | `internal/usecase/` | 业务逻辑、接口定义 | 依赖 entity |
-| Repository | `internal/repo/` | 数据访问抽象与实现 | 依赖 entity |
-| Entity | `internal/entity/` | 纯领域模型 | 无依赖 |
-| Pkg | `pkg/` | 可复用基础设施组件 | 无内部依赖 |
-| Config | `config/` | 配置加载 | 无内部依赖 |
-| DI | `internal/app/` | Wire 依赖注入、应用生命周期 | 组装所有层 |
+| 层级        | 目录                        | 职责                             | 依赖方向     |
+| ----------- | --------------------------- | -------------------------------- | ------------ |
+| Entry Point | `cmd/`                      | 程序入口（app/gen/keys/migrate） | 向内         |
+| Controller  | `internal/controller/http/` | HTTP 路由、请求解析、响应构建    | 依赖 usecase |
+| Use Case    | `internal/usecase/`         | 业务逻辑、接口定义               | 依赖 entity  |
+| Repository  | `internal/repo/`            | 数据访问抽象与实现               | 依赖 entity  |
+| Entity      | `internal/entity/`          | 纯领域模型                       | 无依赖       |
+| Pkg         | `pkg/`                      | 可复用基础设施组件               | 无内部依赖   |
+| Config      | `config/`                   | 配置加载                         | 无内部依赖   |
+| DI          | `internal/app/`             | Wire 依赖注入、应用生命周期      | 组装所有层   |
 
 **数据流方向：** `Controller → UseCase Interface → Repo Interface → Persistence/Cache/Storage`
 
 **依赖约束：**
+
 - Controller 只能依赖 UseCase（接口），不直接依赖 Repo 实现
 - Repo 只能向下依赖基础设施（DB/Redis/MinIO/外部 API），不依赖 UseCase
 - **UseCase 同层不互调：** 不允许 `usecase.A` 注入/调用 `usecase.B`（同一层横向依赖）；跨领域协作通过抽象到 `repo`（如 `repo.Notifier`）或在当前 UseCase 内实现必要的组合逻辑
@@ -144,43 +146,43 @@ dist/                          # 可执行产物（本地/CI 构建输出）
 
 ### 结构体命名
 
-| 类型 | 规则 | 示例 |
-|------|------|------|
-| Entity | PascalCase 单数 | `Post`、`User`、`SiteSetting` |
-| UseCase 实现 | 统一 `useCase`（未导出） | `useCase` |
-| Repo 实现 | `{entity}Repo`（未导出） | `adminRepo`、`captchaRedisStore` |
-| Controller | 以 API 模块命名 | `Admin`、`V1` |
-| Request DTO | 按操作命名 | `request.Login`、`request.CreatePost` |
-| Response DTO | 按用途命名 | `response.PostSummary`、`response.PostDetail` |
-| Input DTO | 按操作命名 | `input.CreatePost`、`input.ListPosts` |
-| Output DTO | 按用途命名 | `output.PostDetail`、`output.ListResult[T]` |
+| 类型         | 规则                     | 示例                                          |
+| ------------ | ------------------------ | --------------------------------------------- |
+| Entity       | PascalCase 单数          | `Post`、`User`、`SiteSetting`                 |
+| UseCase 实现 | 统一 `useCase`（未导出） | `useCase`                                     |
+| Repo 实现    | `{entity}Repo`（未导出） | `adminRepo`、`captchaRedisStore`              |
+| Controller   | 以 API 模块命名          | `Admin`、`V1`                                 |
+| Request DTO  | 按操作命名               | `request.Login`、`request.CreatePost`         |
+| Response DTO | 按用途命名               | `response.PostSummary`、`response.PostDetail` |
+| Input DTO    | 按操作命名               | `input.CreatePost`、`input.ListPosts`         |
+| Output DTO   | 按用途命名               | `output.PostDetail`、`output.ListResult[T]`   |
 
 ### 接口命名
 
-| 类型 | 规则 | 示例 |
-|------|------|------|
-| UseCase 接口 | 以领域名命名 | `Content`、`AdminAuth`、`Comment` |
-| Repo 接口 | `{Entity}Repo` / `{Purpose}Store` | `AdminRepo`、`CaptchaStore`、`ObjectStore` |
-| Pkg 接口 | `Interface` | `logger.Interface` |
+| 类型         | 规则                              | 示例                                       |
+| ------------ | --------------------------------- | ------------------------------------------ |
+| UseCase 接口 | 以领域名命名                      | `Content`、`AdminAuth`、`Comment`          |
+| Repo 接口    | `{Entity}Repo` / `{Purpose}Store` | `AdminRepo`、`CaptchaStore`、`ObjectStore` |
+| Pkg 接口     | `Interface`                       | `logger.Interface`                         |
 
 接口编译检查：`var _ Interface = (*Logger)(nil)`
 
 ### 方法命名
 
-| 类型 | 规则 | 示例 |
-|------|------|------|
-| UseCase 方法 | 动词开头（导出） | `Login`、`CreatePost`、`ListUsers` |
-| Repo 方法 | CRUD 动词（导出） | `Create`、`GetByID`、`ListAll`、`Delete` |
-| Handler 方法 | camelCase（未导出） | `login`、`listPosts`、`createCategory` |
-| 路由注册 | `New{Domain}Routes` | `NewAuthRoutes`、`NewContentRoutes` |
+| 类型         | 规则                | 示例                                     |
+| ------------ | ------------------- | ---------------------------------------- |
+| UseCase 方法 | 动词开头（导出）    | `Login`、`CreatePost`、`ListUsers`       |
+| Repo 方法    | CRUD 动词（导出）   | `Create`、`GetByID`、`ListAll`、`Delete` |
+| Handler 方法 | camelCase（未导出） | `login`、`listPosts`、`createCategory`   |
+| 路由注册     | `New{Domain}Routes` | `NewAuthRoutes`、`NewContentRoutes`      |
 
 ### 变量命名
 
-| 类型 | 规则 | 示例 |
-|------|------|------|
-| 哨兵错误 | `Err` 前缀 | `ErrAdminNotFound`、`ErrRepo` |
+| 类型       | 规则         | 示例                                     |
+| ---------- | ------------ | ---------------------------------------- |
+| 哨兵错误   | `Err` 前缀   | `ErrAdminNotFound`、`ErrRepo`            |
 | 业务码常量 | `Error` 前缀 | `ErrorParamFormat`、`ErrorAdminNotFound` |
-| 包级默认值 | 下划线前缀 | `_defaultPage`、`_defaultAddress` |
+| 包级默认值 | 下划线前缀   | `_defaultPage`、`_defaultAddress`        |
 
 ---
 
@@ -205,6 +207,7 @@ dist/                          # 可执行产物（本地/CI 构建输出）
 ## 五、接口契约规范
 
 ### 前后端协作与自托管约定
+
 - 前端构建阶段不依赖后端：前端根 Layout 元数据使用静态默认值，后端无需在构建时提供可达性。
 - 运行时通过同域 `/api/*` 访问后端：部署层用反向代理将 `/{prefix}` 转发到后端（本项目前缀：`/api/admin`、`/api/v1`）。
 - 前端请求默认携带 Cookie（`credentials: include`），确保 Session 与权限校验在同域场景下生效。
@@ -304,27 +307,28 @@ type PostRepo interface {
 
 **Persistence Repo 总览：**
 
-| Repo 接口 | 对应表 | 说明 |
-|-----------|--------|------|
-| `AdminRepo` | admins | 管理员 |
-| `UserRepo` | users | 用户 |
-| `PostRepo` | posts | 文章 |
-| `TagRepo` | tags | 标签 |
-| `CategoryRepo` | categories | 分类 |
-| `CommentRepo` | comments | 评论 |
-| `PostLikeRepo` | post_likes | 文章点赞（Toggle/Remove/HasLiked） |
-| `PostViewRepo` | post_views | 文章浏览记录（异步缓冲写入，由 `viewbuffer` 实现） |
-| `CommentLikeRepo` | comment_likes | 评论点赞（Toggle/Remove/HasLiked） |
-| `FeedbackRepo` | feedbacks | 反馈 |
-| `LinkRepo` | links | 友链 |
-| `SiteSettingRepo` | site_settings | 站点设置 |
-| `RefreshTokenBlacklistRepo` | refresh_token_blacklist | 刷新令牌黑名单 |
-| `RefreshTokenStore` | — | 刷新令牌当前值存储（Redis），提供 `Set`/`Get`/`Delete` |
-| `FileRepo` | files | 文件元数据 |
-| `NotificationRepo` | notifications | 通知 CRUD |
-| `Notifier` | — | 通知发送（DB 持久化 + SSE 推送） |
+| Repo 接口                   | 对应表                  | 说明                                                   |
+| --------------------------- | ----------------------- | ------------------------------------------------------ |
+| `AdminRepo`                 | admins                  | 管理员                                                 |
+| `UserRepo`                  | users                   | 用户                                                   |
+| `PostRepo`                  | posts                   | 文章                                                   |
+| `TagRepo`                   | tags                    | 标签                                                   |
+| `CategoryRepo`              | categories              | 分类                                                   |
+| `CommentRepo`               | comments                | 评论                                                   |
+| `PostLikeRepo`              | post_likes              | 文章点赞（Toggle/Remove/HasLiked）                     |
+| `PostViewRepo`              | post_views              | 文章浏览记录（异步缓冲写入，由 `viewbuffer` 实现）     |
+| `CommentLikeRepo`           | comment_likes           | 评论点赞（Toggle/Remove/HasLiked）                     |
+| `FeedbackRepo`              | feedbacks               | 反馈                                                   |
+| `LinkRepo`                  | links                   | 友链                                                   |
+| `SiteSettingRepo`           | site_settings           | 站点设置                                               |
+| `RefreshTokenBlacklistRepo` | refresh_token_blacklist | 刷新令牌黑名单                                         |
+| `RefreshTokenStore`         | —                       | 刷新令牌当前值存储（Redis），提供 `Set`/`Get`/`Delete` |
+| `FileRepo`                  | files                   | 文件元数据                                             |
+| `NotificationRepo`          | notifications           | 通知 CRUD                                              |
+| `Notifier`                  | —                       | 通知发送（DB 持久化 + SSE 推送）                       |
 
 ### Link 领域契约（Admin / Public）
+
 - 用途：管理友情链接记录（名称、URL、Logo、描述、排序、状态），前台公开展示 active 友链
 - UseCase 接口（`internal/usecase/contracts.go`）：
   - Admin：
@@ -390,10 +394,10 @@ type PostRepo interface {
 
 > **所有评论相关通知统一在 `UpdateCommentStatus`（状态变更为 `approved`）时触发，`SubmitComment` 不发送任何通知。**
 
-| 触发点 | 通知类型 | 接收人 | 说明 |
-|--------|----------|--------|------|
-| `UpdateCommentStatus(approved)` | `comment_approved` | 评论者 | 评论审核通过后通知评论者 |
-| `UpdateCommentStatus(approved)` | `comment_reply` | 被回复者 | 回复评论审核通过后通知父评论作者（跳过自回复） |
+| 触发点                          | 通知类型           | 接收人   | 说明                                           |
+| ------------------------------- | ------------------ | -------- | ---------------------------------------------- |
+| `UpdateCommentStatus(approved)` | `comment_approved` | 评论者   | 评论审核通过后通知评论者                       |
+| `UpdateCommentStatus(approved)` | `comment_reply`    | 被回复者 | 回复评论审核通过后通知父评论作者（跳过自回复） |
 
 `UpdateCommentStatus` 支持 `approved`/`rejected`/`spam` 三种状态，仅 `approved` 触发通知。
 
@@ -436,10 +440,10 @@ type PostRepo interface {
 
 **路径规则：** `{分类}/{uuid}.ext`，**不在路径中嵌入 resource_id**。
 
-| upload_type | Object Key 格式 | 示例 |
-|-------------|-----------------|------|
-| `avatar` | `avatars/{uuid}.ext` | `avatars/a1b2c3d4.jpg` |
-| `post_cover` | `posts/covers/{uuid}.ext` | `posts/covers/e5f6g7h8.png` |
+| upload_type    | Object Key 格式            | 示例                          |
+| -------------- | -------------------------- | ----------------------------- |
+| `avatar`       | `avatars/{uuid}.ext`       | `avatars/a1b2c3d4.jpg`        |
+| `post_cover`   | `posts/covers/{uuid}.ext`  | `posts/covers/e5f6g7h8.png`   |
 | `post_content` | `posts/content/{uuid}.ext` | `posts/content/i9j0k1l2.webp` |
 
 **设计原则：**
@@ -452,6 +456,7 @@ type PostRepo interface {
 - 不提供“全量解绑” API；仅允许按用途解绑，避免不同实体 ID 数值重合导致跨资源污染
 
 **头像上传与设置更新（Admin Settings）：**
+
 - 管理员在「站点设置 → 博主信息」上传头像，前端调用 `POST /admin/files/upload-url`（`upload_type=avatar`）获得预签名 URL 与 `object_key`
 - 浏览器用 `PUT` 直传到 MinIO（同域 `/minio/...` 代理），UseCase `SaveMeta` 已写入 `files` 表并标记 `usage=avatar`
 - 上传成功后，前端使用 `PUT /admin/settings/profile.avatar` 将设置值更新为该 `object_key`
@@ -549,17 +554,17 @@ type Login struct {
 
 **校验规则约定：**
 
-| 字段类型 | 规则 | 说明 |
-|----------|------|------|
-| 密码（新建/修改） | `min=8,max=20` | 统一 8-20 字符 |
-| 密码（登录/旧密码） | `min=1,max=20` | 允许任意已有密码，仅限长度 |
-| 字符串字段 | 必须携带 `max=N` | 防止超长输入 |
-| 可选字符串 | `omitempty,max=N` | 可选但有上限 |
-| 枚举字段 | `required,oneof=a b c` | 与数据库 ENUM 一致 |
-| int64 ID | `required,gte=1` | 确保正整数（`required` 对数字仅校验非零） |
-| 可选 URL | `omitempty,http_url` 或 `omitempty,max=N` | 限定协议或长度 |
-| OTP 验证码 | `len=6,numeric` | 6位纯数字 |
-| 数组元素 | `omitempty,dive,gte=1` | 每个元素独立校验 |
+| 字段类型            | 规则                                      | 说明                                      |
+| ------------------- | ----------------------------------------- | ----------------------------------------- |
+| 密码（新建/修改）   | `min=8,max=20`                            | 统一 8-20 字符                            |
+| 密码（登录/旧密码） | `min=1,max=20`                            | 允许任意已有密码，仅限长度                |
+| 字符串字段          | 必须携带 `max=N`                          | 防止超长输入                              |
+| 可选字符串          | `omitempty,max=N`                         | 可选但有上限                              |
+| 枚举字段            | `required,oneof=a b c`                    | 与数据库 ENUM 一致                        |
+| int64 ID            | `required,gte=1`                          | 确保正整数（`required` 对数字仅校验非零） |
+| 可选 URL            | `omitempty,http_url` 或 `omitempty,max=N` | 限定协议或长度                            |
+| OTP 验证码          | `len=6,numeric`                           | 6位纯数字                                 |
+| 数组元素            | `omitempty,dive,gte=1`                    | 每个元素独立校验                          |
 
 ### Controller Response（`internal/controller/http/{module}/response/`）
 
@@ -635,14 +640,14 @@ return sharedresp.WriteError(ctx, httpCode, bizCode, msg)
 
 ### BB 分组规则（Admin 和 V1 通用）
 
-| BB 范围 | 类型 | 起始编号 |
-|---------|------|---------|
-| 00 | 成功 | AA00 |
-| 01-19 | 数据相关错误（不存在、类型不支持等） | AA01 |
-| 20-39 | 认证授权错误（密码错误、会话缺失等） | AA20 |
-| 40-59 | 业务逻辑错误（流程限制、校验失败等） | AA40 |
-| 60-79 | 操作/系统错误（CRUD 失败、调用失败等） | AA60 |
-| 80-99 | 预留扩展 | AA80 |
+| BB 范围 | 类型                                   | 起始编号 |
+| ------- | -------------------------------------- | -------- |
+| 00      | 成功                                   | AA00     |
+| 01-19   | 数据相关错误（不存在、类型不支持等）   | AA01     |
+| 20-39   | 认证授权错误（密码错误、会话缺失等）   | AA20     |
+| 40-59   | 业务逻辑错误（流程限制、校验失败等）   | AA40     |
+| 60-79   | 操作/系统错误（CRUD 失败、调用失败等） | AA60     |
+| 80-99   | 预留扩展                               | AA80     |
 
 **编号规则：**
 
@@ -653,54 +658,54 @@ return sharedresp.WriteError(ctx, httpCode, bizCode, msg)
 
 ### 全局码（`bizcode/codes.go`）
 
-| 码值 | 常量 | 含义 |
-|------|------|------|
-| `"0000"` | `Success` | 成功 |
-| `"0001"` | `ErrorParam` | 参数错误 |
-| `"0002"` | `ErrorParamMissing` | 参数缺失 |
-| `"0003"` | `ErrorParamFormat` | 参数格式错误 |
-| `"0004"` | `ErrorDataNotFound` | 数据不存在 |
-| `"0006"` | `ErrorInvalidParams` | 无效参数 |
-| `"0020"` | `ErrorUnauthorized` | 未授权 |
-| `"0021"` | `ErrorTokenInvalid` | Token 无效 |
-| `"0022"` | `ErrorTokenExpired` | Token 已过期 |
-| `"0023"` | `ErrorPermissionDenied` | 权限不足 |
-| `"0024"` | `ErrorLoginRequired` | 请先登录 |
-| `"0060"` | `ErrorSystem` | 系统错误 |
-| `"0061"` | `ErrorDatabase` | 数据库错误 |
-| `"0062"` | `ErrorCache` | 缓存错误 |
-| `"0064"` | `ErrorThirdParty` | 第三方服务错误 |
-| `"0065"` | `ErrorConfigNotLoaded` | 配置未加载 |
+| 码值     | 常量                    | 含义           |
+| -------- | ----------------------- | -------------- |
+| `"0000"` | `Success`               | 成功           |
+| `"0001"` | `ErrorParam`            | 参数错误       |
+| `"0002"` | `ErrorParamMissing`     | 参数缺失       |
+| `"0003"` | `ErrorParamFormat`      | 参数格式错误   |
+| `"0004"` | `ErrorDataNotFound`     | 数据不存在     |
+| `"0006"` | `ErrorInvalidParams`    | 无效参数       |
+| `"0020"` | `ErrorUnauthorized`     | 未授权         |
+| `"0021"` | `ErrorTokenInvalid`     | Token 无效     |
+| `"0022"` | `ErrorTokenExpired`     | Token 已过期   |
+| `"0023"` | `ErrorPermissionDenied` | 权限不足       |
+| `"0024"` | `ErrorLoginRequired`    | 请先登录       |
+| `"0060"` | `ErrorSystem`           | 系统错误       |
+| `"0061"` | `ErrorDatabase`         | 数据库错误     |
+| `"0062"` | `ErrorCache`            | 缓存错误       |
+| `"0064"` | `ErrorThirdParty`       | 第三方服务错误 |
+| `"0065"` | `ErrorConfigNotLoaded`  | 配置未加载     |
 
 ### Admin 模块码（`admin/response/codes.go`）
 
-| AA | 模块 | 使用的 BB 分组及起始码 |
-|----|------|----------------------|
-| 11 | 管理员 | 数据 `"1101"` / 认证 `"1120"` / 业务 `"1140"` / 操作 `"1160"` |
-| 12 | 文件 | 数据 `"1201"`-`"1202"` / 操作 `"1260"`-`"1264"` |
-| 13 | 用户 | 操作 `"1360"` |
-| 14 | 内容 | 数据 `"1401"` / 操作 `"1460"` |
-| 15 | 评论 | 操作 `"1560"` |
-| 16 | 反馈 | 操作 `"1660"` |
-| 17 | 友链 | 操作 `"1760"` |
-| 18 | 设置 | 操作 `"1860"` |
-| 19 | 通知 | 操作 `"1960"` |
+| AA  | 模块   | 使用的 BB 分组及起始码                                        |
+| --- | ------ | ------------------------------------------------------------- |
+| 11  | 管理员 | 数据 `"1101"` / 认证 `"1120"` / 业务 `"1140"` / 操作 `"1160"` |
+| 12  | 文件   | 数据 `"1201"`-`"1202"` / 操作 `"1260"`-`"1264"`               |
+| 13  | 用户   | 操作 `"1360"`                                                 |
+| 14  | 内容   | 数据 `"1401"` / 操作 `"1460"`                                 |
+| 15  | 评论   | 操作 `"1560"`                                                 |
+| 16  | 反馈   | 操作 `"1660"`                                                 |
+| 17  | 友链   | 操作 `"1760"`                                                 |
+| 18  | 设置   | 操作 `"1860"`                                                 |
+| 19  | 通知   | 操作 `"1960"`                                                 |
 
 ### V1 模块码（`v1/response/codes.go`）
 
 V1 模块编号 01-09，统一使用 4 位零填充字符串格式 `"AABB"`：
 
-| AA | 模块 | 使用的 BB 分组及起始码 |
-|----|------|----------------------|
-| 01 | 认证 | 认证 `"0120"` |
-| 02 | 文件 | 操作 `"0260"` |
-| 03 | 用户 | 数据 `"0301"` |
-| 04 | 内容 | 数据 `"0401"` / 操作 `"0460"` |
-| 05 | 评论 | 操作 `"0560"` |
-| 06 | 反馈 | 操作 `"0660"` |
-| 07 | 友链 | 操作 `"0760"` |
-| 08 | 设置 | 操作 `"0860"` |
-| 09 | 通知 | 操作 `"0960"` |
+| AA  | 模块 | 使用的 BB 分组及起始码        |
+| --- | ---- | ----------------------------- |
+| 01  | 认证 | 认证 `"0120"`                 |
+| 02  | 文件 | 操作 `"0260"`                 |
+| 03  | 用户 | 数据 `"0301"`                 |
+| 04  | 内容 | 数据 `"0401"` / 操作 `"0460"` |
+| 05  | 评论 | 操作 `"0560"`                 |
+| 06  | 反馈 | 操作 `"0660"`                 |
+| 07  | 友链 | 操作 `"0760"`                 |
+| 08  | 设置 | 操作 `"0860"`                 |
+| 09  | 通知 | 操作 `"0960"`                 |
 
 ### 组织方式
 
@@ -766,28 +771,28 @@ type PageMeta struct {
 
 统一使用 **snake_case**，与 JSON 响应格式保持一致：
 
-| 参数 | 说明 | 示例 |
-|------|------|------|
-| `page` | 页码（默认 1） | `?page=2` |
-| `page_size` | 每页数量（默认 10，最大 100） | `?page_size=15` |
-| `sort_by` | 排序字段（需在 `WithAllowedSortBy` 白名单中） | `?sort_by=created_at` |
-| `order` | 排序方向：`asc` / `desc`（默认 `desc`） | `?order=asc` |
-| `keyword` | 关键词搜索 | `?keyword=test` |
-| `filter.*` | 过滤参数 | `?filter.status=published` |
+| 参数        | 说明                                          | 示例                       |
+| ----------- | --------------------------------------------- | -------------------------- |
+| `page`      | 页码（默认 1）                                | `?page=2`                  |
+| `page_size` | 每页数量（默认 10，最大 100）                 | `?page_size=15`            |
+| `sort_by`   | 排序字段（需在 `WithAllowedSortBy` 白名单中） | `?sort_by=created_at`      |
+| `order`     | 排序方向：`asc` / `desc`（默认 `desc`）       | `?order=asc`               |
+| `keyword`   | 关键词搜索                                    | `?keyword=test`            |
+| `filter.*`  | 过滤参数                                      | `?filter.status=published` |
 
 **各实体可排序字段：**
 
-| 实体 | 允许的 `sort_by` 值 | 默认排序 |
-|------|---------------------|----------|
-| Post | `created_at`, `updated_at`, `views`, `likes` | `created_at desc` |
-| Category | `name`, `created_at` | `created_at desc` |
-| Tag | `name`, `created_at` | `created_at desc` |
-| Comment | `created_at` | `created_at desc` |
-| User | `created_at` | `created_at desc` |
-| Feedback | `created_at` | `created_at desc` |
-| Link | `sort_order`, `created_at`, `name` | `sort_order asc, created_at desc` |
-| File | `created_at`, `file_size` | `created_at desc` |
-| Notification | `created_at` | `created_at desc` |
+| 实体         | 允许的 `sort_by` 值                          | 默认排序                          |
+| ------------ | -------------------------------------------- | --------------------------------- |
+| Post         | `created_at`, `updated_at`, `views`, `likes` | `created_at desc`                 |
+| Category     | `name`, `created_at`                         | `created_at desc`                 |
+| Tag          | `name`, `created_at`                         | `created_at desc`                 |
+| Comment      | `created_at`                                 | `created_at desc`                 |
+| User         | `created_at`                                 | `created_at desc`                 |
+| Feedback     | `created_at`                                 | `created_at desc`                 |
+| Link         | `sort_order`, `created_at`, `name`           | `sort_order asc, created_at desc` |
+| File         | `created_at`, `file_size`                    | `created_at desc`                 |
+| Notification | `created_at`                                 | `created_at desc`                 |
 
 ---
 
@@ -817,18 +822,18 @@ r.logger.Error(err, "http - admin - auth - login - usecase")
 
 ### Handler 内部变量命名规范
 
-| 场景 | 变量名 | 示例 |
-|------|--------|------|
-| 请求体 | `body` | `var body request.CreatePost` |
-| 分页查询 | `pq` | `pq := sharedresp.ParsePageQueryWithOptions(ctx, ...)` |
-| UseCase 返回结果 | `result` | `result, err := r.content.ListPosts(...)` |
-| 响应列表 | `list` | `list := make([]response.PostSummary, 0, len(result.Items))` |
-| URL 路径参数（原始字符串） | `id` / `key` / `slug` | `id := ctx.Params("id")`、`slug := ctx.Params("slug")` |
-| URL 路径参数（解析后） | `nid` | `nid, err := strconv.ParseInt(id, 10, 64)` |
-| 从 JWT claims 获取的用户 ID | `uid` | `uid, err := claims.UserIDInt()` |
-| 从 session 获取的 admin ID | `aid` | `aid, _ := strconv.ParseInt(idStr, 10, 64)` |
-| 循环变量 | 单字母缩写 | `p`(post)、`c`(category/comment)、`t`(tag)、`u`(user)、`f`(feedback)、`l`(link)、`s`(setting) |
-| 错误映射三元组 | `httpCode` / `bizCode` / `msg` | 用于 `switch` 错误映射块 |
+| 场景                        | 变量名                         | 示例                                                                                          |
+| --------------------------- | ------------------------------ | --------------------------------------------------------------------------------------------- |
+| 请求体                      | `body`                         | `var body request.CreatePost`                                                                 |
+| 分页查询                    | `pq`                           | `pq := sharedresp.ParsePageQueryWithOptions(ctx, ...)`                                        |
+| UseCase 返回结果            | `result`                       | `result, err := r.content.ListPosts(...)`                                                     |
+| 响应列表                    | `list`                         | `list := make([]response.PostSummary, 0, len(result.Items))`                                  |
+| URL 路径参数（原始字符串）  | `id` / `key` / `slug`          | `id := ctx.Params("id")`、`slug := ctx.Params("slug")`                                        |
+| URL 路径参数（解析后）      | `nid`                          | `nid, err := strconv.ParseInt(id, 10, 64)`                                                    |
+| 从 JWT claims 获取的用户 ID | `uid`                          | `uid, err := claims.UserIDInt()`                                                              |
+| 从 session 获取的 admin ID  | `aid`                          | `aid, _ := strconv.ParseInt(idStr, 10, 64)`                                                   |
+| 循环变量                    | 单字母缩写                     | `p`(post)、`c`(category/comment)、`t`(tag)、`u`(user)、`f`(feedback)、`l`(link)、`s`(setting) |
+| 错误映射三元组              | `httpCode` / `bizCode` / `msg` | 用于 `switch` 错误映射块                                                                      |
 
 ### ID 解析统一模式
 
@@ -913,7 +918,7 @@ if err != nil {
 }
 ```
 
-- `authUC` 导入路径：`"github.com/scc749/nimbus-blog-api/internal/usecase/auth/user"`
+- `authUC` 导入路径：`"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/auth/user"`
 - 统一使用 `uid` 变量名存储解析后的用户 ID
 
 ### 点赞状态：`LikeInfo` 与 `getLikeInfo`
@@ -964,12 +969,12 @@ func NewContentRoutes(apiAdminGroup fiber.Router, l logger.Interface, store *ses
 
 **资源 CRUD 路由：**
 
-| 方法 | 路径 | 用途 | ID 来源 |
-|------|------|------|---------|
-| GET | `/resources` | 列表 | — |
-| GET | `/resources/:id` | 详情 | URL 路径参数 |
-| POST | `/resources` | 创建 | — |
-| PUT | `/resources/:id` | 更新 | URL 路径参数 |
+| 方法   | 路径             | 用途 | ID 来源      |
+| ------ | ---------------- | ---- | ------------ |
+| GET    | `/resources`     | 列表 | —            |
+| GET    | `/resources/:id` | 详情 | URL 路径参数 |
+| POST   | `/resources`     | 创建 | —            |
+| PUT    | `/resources/:id` | 更新 | URL 路径参数 |
 | DELETE | `/resources/:id` | 删除 | URL 路径参数 |
 
 **关键规则：**
@@ -979,9 +984,9 @@ func NewContentRoutes(apiAdminGroup fiber.Router, l logger.Interface, store *ses
 
 **子资源状态变更：**
 
-| 方法 | 路径 | 用途 |
-|------|------|------|
-| PUT | `/resources/:id/status` | 变更资源状态（approve、ban 等） |
+| 方法 | 路径                    | 用途                            |
+| ---- | ----------------------- | ------------------------------- |
+| PUT  | `/resources/:id/status` | 变更资源状态（approve、ban 等） |
 
 状态变更统一使用 `PUT /:id/status`，不使用 `POST /:id/动词` 形式。保持 users / comments / feedbacks 风格一致。
 
@@ -998,6 +1003,7 @@ POST /files/upload-url
 ```
 
 **请求体解析与空请求体规则：**
+
 - 所有 `POST`/`PUT` 端点按照 JSON 解析：body 解析失败或缺失时返回 `400`，业务码使用参数格式错误码（`"0003"`），message 为 `invalid request body`。
 - 对于无必填字段但需要 JSON 的端点，前端必须发送**空对象** `{}`（而非完全空的 body）。示例：`POST /auth/2fa/setup` 请求体为 `{}`。
 - Admin 2FA 采用“两阶段启用”：
@@ -1103,19 +1109,22 @@ V1 路由与 Admin 共享 RESTful 风格，但有以下区别：
 
 V1 根据接口性质使用三种鉴权层级：
 
-| 层级 | 中间件 | 适用场景 |
-|------|--------|----------|
-| 公开 | 无中间件 | 分类、标签、链接、设置等无用户上下文的只读接口 |
+| 层级     | 中间件                         | 适用场景                                                  |
+| -------- | ------------------------------ | --------------------------------------------------------- |
+| 公开     | 无中间件                       | 分类、标签、链接、设置等无用户上下文的只读接口            |
 | 可选鉴权 | `NewOptionalUserJWTMiddleware` | 文章列表/详情、评论列表（登录用户可获取 `like` 点赞状态） |
-| 强制鉴权 | `NewUserJWTMiddleware` | 点赞、评论、个人资料等需要用户身份的写操作 |
+| 强制鉴权 | `NewUserJWTMiddleware`         | 点赞、评论、个人资料等需要用户身份的写操作                |
+
 （不再使用独立的“活跃用户”中间件。禁用用户的拦截策略见下文说明）
 
 **路由分组与命名：**
+
 - 同一资源前缀按 `Public → Optional → Auth` 顺序注册，避免前缀中间件误伤更具体的 public 子路径
 - group 变量命名统一使用：`{domain}PublicGroup`、`{domain}OptionalGroup`、`{domain}AuthGroup`
 - 当同一前缀下既有 public 路由又有强制鉴权 group（例如通知 SSE），public 路由必须注册在 auth group 之前
 
 禁用用户拦截策略：
+
 - refresh 会话定义：Redis `refresh_token:{userID}` 保存该用户“当前 refresh token”（字符串）；存在即视为会话有效
 - `NewUserJWTMiddleware` 在验签通过后，读取 `refresh_token` Cookie，并调用 `UserAuth.ValidateSession(ctx, userID, refreshToken)` 校验 refresh 是否仍有效；无效则返回 `401 ErrorTokenInvalid`
 - 刷新流程在 UseCase 层检查 `user.Status != "active"` 并返回 `ErrUserDisabled`，确保禁用用户无法续签刷新令牌
@@ -1178,12 +1187,12 @@ notificationAuthGroup := apiV1Group.Group("/notifications", middleware.NewUserJW
 
 点赞和评论作为文章的子资源，路径挂在 `/content/posts/:id/` 下：
 
-| 方法 | 路径 | 用途 |
-|------|------|------|
-| POST | `/content/posts/:id/likes` | 切换点赞（Toggle） |
-| DELETE | `/content/posts/:id/likes` | 取消点赞 |
-| GET | `/content/posts/:id/comments` | 文章评论列表 |
-| POST | `/content/posts/:id/comments` | 提交评论 |
+| 方法   | 路径                          | 用途               |
+| ------ | ----------------------------- | ------------------ |
+| POST   | `/content/posts/:id/likes`    | 切换点赞（Toggle） |
+| DELETE | `/content/posts/:id/likes`    | 取消点赞           |
+| GET    | `/content/posts/:id/comments` | 文章评论列表       |
+| POST   | `/content/posts/:id/comments` | 提交评论           |
 
 > 注意：文章详情使用 `:slug`（`GET /content/posts/:slug`），而子资源操作使用 `:id`（数值主键）。
 > 两者不冲突，因为 Fiber 按路径段数区分（3 段 vs 4 段）。
@@ -1351,6 +1360,7 @@ rows, err := do.Order(p.CreatedAt.Desc()).Offset(offset).Limit(limit).Find()
 Gen 类型 API 无法表达的 PostgreSQL 特有语法（如 `ILIKE`），使用 `field.NewUnsafeFieldRaw()` 创建原始字段表达式，传入 `Where()` / `Order()`：
 
 > **注意**：
+>
 > - **不要**使用 `gen.Cond(clause.Expr{...})`，gen v0.3.27 的 `exprToCondition` 仅支持 JSON 相关表达式，`clause.Expr` 会导致运行时错误 `unsupported Expression clause.Expr to converted to Condition`。
 > - **不要**使用 `Clauses(clause.Where{...})` 或 `Clauses(clause.OrderBy{...})`，gen 的安全检查会 ban 掉 WHERE / ORDER BY 等子句，导致运行时错误 `clause WHERE is banned`。
 > - `field.NewUnsafeFieldRaw` 返回 `field.Field`（实现 `field.Expr` / `gen.Condition` 接口），可安全用于 `Where()` 和 `Order()`。
@@ -1371,9 +1381,9 @@ do = do.Where(field.NewUnsafeFieldRaw("title ILIKE ? OR COALESCE(excerpt, '') IL
 
 #### 关键词搜索策略
 
-| 搜索层 | 方式 | 说明 |
-|--------|------|------|
-| WHERE 过滤 | `ILIKE '%keyword%'` | 精确子串匹配，不会误匹配 |
+| 搜索层        | 方式                   | 说明                                 |
+| ------------- | ---------------------- | ------------------------------------ |
+| WHERE 过滤    | `ILIKE '%keyword%'`    | 精确子串匹配，不会误匹配             |
 | ORDER BY 排序 | `similarity(...) DESC` | pg_trgm 相似度排序，匹配度高的排前面 |
 
 > **不要**在 WHERE 中使用 pg_trgm 的 `%` 运算符。`%` 基于三元组（trigram）计算模糊相似度，默认阈值仅 0.3，对短关键词（如 1~3 字符）区分度极差，容易产生大量误匹配。`%` 适合 ORDER BY 排序场景，不适合 WHERE 精确过滤。
@@ -1463,26 +1473,26 @@ s.WithContext(ctx).Clauses(clause.OnConflict{
 
 ### CRUD 方法命名
 
-| 操作 | 方法名 | 返回值 |
-|------|--------|--------|
-| 创建 | `Create` | `(int64, error)` |
-| 查询单条 | `GetByID` / `GetBySlug` / `GetByEmail` | `(*entity.T, error)` |
-| 查询列表（分页） | `List` | `([]*entity.T, int64, error)` |
-| 查询列表（全量） | `ListAll` / `ListAllPublic` | `([]*entity.T, error)` |
-| 更新 | `Update` / `UpdateStatus` | `error` |
-| 删除 | `Delete` | `error` |
-| 关联操作 | `SetTags` / `Toggle` / `Remove` | 按需 |
-| 单项存在性检查 | `HasLiked` | `(bool, error)`（检查用户是否已点赞指定资源） |
-| 批量解绑（按用途） | `ClearResourceIDByResourceAndUsage` | `error`（按 usage 解绑指定 resource_id 的文件） |
+| 操作               | 方法名                                 | 返回值                                          |
+| ------------------ | -------------------------------------- | ----------------------------------------------- |
+| 创建               | `Create`                               | `(int64, error)`                                |
+| 查询单条           | `GetByID` / `GetBySlug` / `GetByEmail` | `(*entity.T, error)`                            |
+| 查询列表（分页）   | `List`                                 | `([]*entity.T, int64, error)`                   |
+| 查询列表（全量）   | `ListAll` / `ListAllPublic`            | `([]*entity.T, error)`                          |
+| 更新               | `Update` / `UpdateStatus`              | `error`                                         |
+| 删除               | `Delete`                               | `error`                                         |
+| 关联操作           | `SetTags` / `Toggle` / `Remove`        | 按需                                            |
+| 单项存在性检查     | `HasLiked`                             | `(bool, error)`（检查用户是否已点赞指定资源）   |
+| 批量解绑（按用途） | `ClearResourceIDByResourceAndUsage`    | `error`（按 usage 解绑指定 resource_id 的文件） |
 
 ### Gen API 使用优先级
 
-| 优先级 | 方式 | 适用场景 |
-|--------|------|----------|
-| 1（首选） | Gen 类型安全 API | 等值/范围/IN/NULL 条件、标准排序、分页、CRUD |
-| 2 | `field.NewUnsafeFieldRaw()` 用于 `Where()` | ILIKE 等 PostgreSQL 特有 WHERE 条件 |
-| 3 | `field.NewUnsafeFieldRaw().Desc()` 用于 `Order()` | similarity() 等原始 SQL 排序表达式 |
-| 4 | `Clauses(clause.OnConflict{})` | Upsert 操作 |
+| 优先级    | 方式                                              | 适用场景                                     |
+| --------- | ------------------------------------------------- | -------------------------------------------- |
+| 1（首选） | Gen 类型安全 API                                  | 等值/范围/IN/NULL 条件、标准排序、分页、CRUD |
+| 2         | `field.NewUnsafeFieldRaw()` 用于 `Where()`        | ILIKE 等 PostgreSQL 特有 WHERE 条件          |
+| 3         | `field.NewUnsafeFieldRaw().Desc()` 用于 `Order()` | similarity() 等原始 SQL 排序表达式           |
+| 4         | `Clauses(clause.OnConflict{})`                    | Upsert 操作                                  |
 
 **禁止**直接使用 `r.db` 或 `gorm.DB` 进行查询。所有数据访问必须经过 `r.query.{Table}` 的 Gen API。
 
@@ -1594,11 +1604,11 @@ type (
 
 ### 文件职责
 
-| 文件 | 说明 |
-|------|------|
-| `wire.go` | Provider 函数定义 + ProviderSet + Injector（带 `//go:build wireinject` 标签） |
-| `wire_gen.go` | 在 `internal/app/` 目录下执行 `wire` 命令自动生成（**禁止手动编辑**） |
-| `app.go` | 应用生命周期（启动、信号监听、优雅关闭） |
+| 文件          | 说明                                                                          |
+| ------------- | ----------------------------------------------------------------------------- |
+| `wire.go`     | Provider 函数定义 + ProviderSet + Injector（带 `//go:build wireinject` 标签） |
+| `wire_gen.go` | 在 `internal/app/` 目录下执行 `wire` 命令自动生成（**禁止手动编辑**）         |
+| `app.go`      | 应用生命周期（启动、信号监听、优雅关闭）                                      |
 
 ### App 结构体
 
@@ -1623,15 +1633,15 @@ type AppInfo struct {
 
 按层级组织，每类使用 `// ─── 分类标题 ───` 分隔符：
 
-| 分类 | 命名规则 | 参数规则 | 示例 |
-|------|----------|----------|------|
-| Infrastructure | `New{Component}` | 仅接收 `cfg *config.Config` | `NewLogger`、`NewPostgres`、`NewRedis`、`NewMinioClient` |
-| Repo: Persistence | `New{Entity}Repo` | 接收 `pg *postgres.Postgres`，内部提取 `pg.DB` | `NewAdminRepo`、`NewPostRepo`、`NewFileRepo` |
-| Repo: ViewBuffer | `New{Entity}Repo` | 接收 `pg` + `l`，返回 `(repo.Interface, func())` | `NewPostViewRepo`（返回 cleanup 用于优雅关闭） |
-| Repo: Cache | `New{Purpose}Store` | 接收 `r *redis.Redis` | `NewCaptchaStore`、`NewRefreshTokenStore` |
-| Repo: Storage/Messaging/WebAPI | `New{Purpose}` | 按需接收 `cfg` 或具体依赖 | `NewObjectStore`、`NewEmailSender`、`NewLLMWebAPI` |
-| UseCase | `New{Domain}UseCase` | 仅接收实际需要的依赖，**不传入未使用的参数** | `NewContentUseCase`、`NewUserUseCase` |
-| HTTP | `SetupHTTPServer` | 接收 `cfg`、`l` 和所有 UseCase 接口 | — |
+| 分类                           | 命名规则             | 参数规则                                         | 示例                                                     |
+| ------------------------------ | -------------------- | ------------------------------------------------ | -------------------------------------------------------- |
+| Infrastructure                 | `New{Component}`     | 仅接收 `cfg *config.Config`                      | `NewLogger`、`NewPostgres`、`NewRedis`、`NewMinioClient` |
+| Repo: Persistence              | `New{Entity}Repo`    | 接收 `pg *postgres.Postgres`，内部提取 `pg.DB`   | `NewAdminRepo`、`NewPostRepo`、`NewFileRepo`             |
+| Repo: ViewBuffer               | `New{Entity}Repo`    | 接收 `pg` + `l`，返回 `(repo.Interface, func())` | `NewPostViewRepo`（返回 cleanup 用于优雅关闭）           |
+| Repo: Cache                    | `New{Purpose}Store`  | 接收 `r *redis.Redis`                            | `NewCaptchaStore`、`NewRefreshTokenStore`                |
+| Repo: Storage/Messaging/WebAPI | `New{Purpose}`       | 按需接收 `cfg` 或具体依赖                        | `NewObjectStore`、`NewEmailSender`、`NewLLMWebAPI`       |
+| UseCase                        | `New{Domain}UseCase` | 仅接收实际需要的依赖，**不传入未使用的参数**     | `NewContentUseCase`、`NewUserUseCase`                    |
+| HTTP                           | `SetupHTTPServer`    | 接收 `cfg`、`l` 和所有 UseCase 接口              | —                                                        |
 
 ### Provider 函数参数命名
 
@@ -1639,18 +1649,18 @@ type AppInfo struct {
 
 参数命名约定：
 
-| 类型 | 变量名 | 说明 |
-|------|--------|------|
-| `*config.Config` | `cfg` | 全局统一 |
-| `logger.Interface` | `l` | 全局统一 |
-| `*postgres.Postgres` | `pg` | Repo 构造器参数 |
-| `*redis.Redis` | `r` | Cache 构造器参数 |
-| `*minioSDK.Client` | `cli` | Storage 构造器参数 |
-| `repo.XxxRepo` | `xxxRepo` | UseCase 构造器中的 Repo 参数，使用 `camelCase` 全称 |
-| `repo.XxxStore` | `xxxStore` | 如 `refreshStore`、`codeStore` |
-| `repo.XxxWebAPI` | 描述性名称 | 如 `translationAPI`、`llmAPI` |
-| `usecase.Xxx` | `xxxUC` | SetupHTTPServer 中的 UseCase 参数（`auth` 除外） |
-| `authuser.TokenSigner` | `signer` | JWT 签名器 |
+| 类型                   | 变量名     | 说明                                                |
+| ---------------------- | ---------- | --------------------------------------------------- |
+| `*config.Config`       | `cfg`      | 全局统一                                            |
+| `logger.Interface`     | `l`        | 全局统一                                            |
+| `*postgres.Postgres`   | `pg`       | Repo 构造器参数                                     |
+| `*redis.Redis`         | `r`        | Cache 构造器参数                                    |
+| `*minioSDK.Client`     | `cli`      | Storage 构造器参数                                  |
+| `repo.XxxRepo`         | `xxxRepo`  | UseCase 构造器中的 Repo 参数，使用 `camelCase` 全称 |
+| `repo.XxxStore`        | `xxxStore` | 如 `refreshStore`、`codeStore`                      |
+| `repo.XxxWebAPI`       | 描述性名称 | 如 `translationAPI`、`llmAPI`                       |
+| `usecase.Xxx`          | `xxxUC`    | SetupHTTPServer 中的 UseCase 参数（`auth` 除外）    |
+| `authuser.TokenSigner` | `signer`   | JWT 签名器                                          |
 
 ### Provider 函数模式
 
@@ -1726,61 +1736,61 @@ func InitializeApp(cfg *config.Config) (*App, func(), error) {
 
 ### import 别名约定
 
-| 别名 | 包路径 | 说明 |
-|------|--------|------|
-| `httpctrl` | `internal/controller/http` | 避免与 `net/http` 冲突 |
-| `minioPkg` | `pkg/minio` | 避免与 `minio-go/v7` 冲突 |
-| `minioSDK` | `github.com/minio/minio-go/v7` | MinIO SDK |
-| `reponotif` | `internal/repo/notification` | 避免与 `usecase/notification` 冲突 |
-| `authfacade` | `internal/usecase/auth` | Auth 门面 |
-| `authadmin` | `internal/usecase/auth/admin` | Admin 认证 |
-| `authuser` | `internal/usecase/auth/user` | User 认证 |
-| `useruc` | `internal/usecase/user` | 避免与 `authuser` 冲突 |
-| 其他 usecase | 无别名 | `captcha`、`comment`、`content` 等直接使用包名 |
- 
+| 别名         | 包路径                         | 说明                                           |
+| ------------ | ------------------------------ | ---------------------------------------------- |
+| `httpctrl`   | `internal/controller/http`     | 避免与 `net/http` 冲突                         |
+| `minioPkg`   | `pkg/minio`                    | 避免与 `minio-go/v7` 冲突                      |
+| `minioSDK`   | `github.com/minio/minio-go/v7` | MinIO SDK                                      |
+| `reponotif`  | `internal/repo/notification`   | 避免与 `usecase/notification` 冲突             |
+| `authfacade` | `internal/usecase/auth`        | Auth 门面                                      |
+| `authadmin`  | `internal/usecase/auth/admin`  | Admin 认证                                     |
+| `authuser`   | `internal/usecase/auth/user`   | User 认证                                      |
+| `useruc`     | `internal/usecase/user`        | 避免与 `authuser` 冲突                         |
+| 其他 usecase | 无别名                         | `captcha`、`comment`、`content` 等直接使用包名 |
+
 ## 十八、接口文档（Swagger）规范
- 
+
 ### 集成方式
- 
- - 使用 Fiber v3 + gofiber/contrib/v3/swaggo 集成 Swagger UI
- - 路由：当配置开启时，GET `/swagger/*` 提供文档页面
- - 生成文档：在项目根目录执行
- 
- ```bash
- go install github.com/swaggo/swag/cmd/swag@latest
- swag init -g cmd/app/main.go -d . -o docs --parseInternal --parseDependency
- ```
- 
+
+- 使用 Fiber v3 + gofiber/contrib/v3/swaggo 集成 Swagger UI
+- 路由：当配置开启时，GET `/swagger/*` 提供文档页面
+- 生成文档：在项目根目录执行
+
+```bash
+go install github.com/swaggo/swag/cmd/swag@latest
+swag init -g cmd/app/main.go -d . -o docs --parseInternal --parseDependency
+```
+
 说明：不建议加 `--parseGoList=false`，否则在部分 Go 版本下可能导致 `json.RawMessage` 等类型解析失败，从而出现 schema 缺失。
 
- - 配置开关：`config.yaml` 中 `swagger.enabled`（true 开启 / false 关闭）
- 
+- 配置开关：`config.yaml` 中 `swagger.enabled`（true 开启 / false 关闭）
+
 ### 分页响应的文档类型
- 
- - 为 `Page[T]` 定义具名类型别名，便于文档展示与注解引用
- - 位置：
-   - `internal/controller/http/admin/response/pages.go`
-   - `internal/controller/http/v1/response/pages.go`
- - 示例：
- 
- ```go
- // admin
- type CommentDetailPage = shared.Page[CommentDetail]
- type TagDetailPage     = shared.Page[TagDetail]
- 
- // v1
- type PostSummaryPage        = shared.Page[PostSummary]
- type NotificationDetailPage = shared.Page[NotificationDetail]
- ```
- 
- - 注解引用规范：在 `@Success` 或嵌套 `Envelope` 的 `data` 字段中使用具名别名
- - 推荐写法：
- 
- ```go
- // @Success 200 {object} response.Envelope{data=response.CommentDetailPage}
- ```
- 
- 说明：类型别名仅影响文档生成与类型可读性，运行时结构与序列化不变
+
+- 为 `Page[T]` 定义具名类型别名，便于文档展示与注解引用
+- 位置：
+  - `internal/controller/http/admin/response/pages.go`
+  - `internal/controller/http/v1/response/pages.go`
+- 示例：
+
+```go
+// admin
+type CommentDetailPage = shared.Page[CommentDetail]
+type TagDetailPage     = shared.Page[TagDetail]
+
+// v1
+type PostSummaryPage        = shared.Page[PostSummary]
+type NotificationDetailPage = shared.Page[NotificationDetail]
+```
+
+- 注解引用规范：在 `@Success` 或嵌套 `Envelope` 的 `data` 字段中使用具名别名
+- 推荐写法：
+
+```go
+// @Success 200 {object} response.Envelope{data=response.CommentDetailPage}
+```
+
+说明：类型别名仅影响文档生成与类型可读性，运行时结构与序列化不变
 
 ---
 

@@ -8,7 +8,7 @@ import (
 	swaggo "github.com/gofiber/contrib/v3/swaggo"
 	"github.com/gofiber/fiber/v3"
 
-	_ "github.com/scc749/nimbus-blog-api/docs"
+	_ "github.com/QING520-MAKER/Xiaoqing-blog-api/docs"
 )
 
 func TestSwaggerRoutes(t *testing.T) {

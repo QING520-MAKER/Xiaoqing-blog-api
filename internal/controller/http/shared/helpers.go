@@ -3,8 +3,8 @@ package shared
 import (
 	"net/http"
 
+	codes "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/bizcode"
 	"github.com/gofiber/fiber/v3"
-	codes "github.com/scc749/nimbus-blog-api/internal/controller/http/bizcode"
 )
 
 type Option func(*Envelope)

@@ -4,13 +4,13 @@ import (
 	"errors"
 	"net/http"
 
+	sharedresp "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/shared"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/v1/request"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/v1/response"
+	authUC "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/auth/user"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/input"
+	userUC "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/user"
 	"github.com/gofiber/fiber/v3"
-	sharedresp "github.com/scc749/nimbus-blog-api/internal/controller/http/shared"
-	"github.com/scc749/nimbus-blog-api/internal/controller/http/v1/request"
-	"github.com/scc749/nimbus-blog-api/internal/controller/http/v1/response"
-	authUC "github.com/scc749/nimbus-blog-api/internal/usecase/auth/user"
-	"github.com/scc749/nimbus-blog-api/internal/usecase/input"
-	userUC "github.com/scc749/nimbus-blog-api/internal/usecase/user"
 )
 
 // @Summary 获取当前用户信息

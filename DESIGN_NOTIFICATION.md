@@ -14,13 +14,13 @@
 
 ## 二、架构约束
 
-| 约束 | 说明 |
-|------|------|
-| **依赖方向** | Controller → UseCase → Repo → Entity，只允许向内依赖 |
-| **UseCase 同层不互调** | UseCase 之间禁止相互依赖，通知发送下沉到 Repo 层 |
-| **Pkg 无内部依赖** | `pkg/` 包不依赖 `internal/` 任何包 |
-| **Repo 接口集中定义** | 所有 Repo 接口在 `repo/contracts.go` 中声明 |
-| **UseCase 接口集中定义** | 所有 UseCase 接口在 `usecase/contracts.go` 中声明 |
+| 约束                     | 说明                                                 |
+| ------------------------ | ---------------------------------------------------- |
+| **依赖方向**             | Controller → UseCase → Repo → Entity，只允许向内依赖 |
+| **UseCase 同层不互调**   | UseCase 之间禁止相互依赖，通知发送下沉到 Repo 层     |
+| **Pkg 无内部依赖**       | `pkg/` 包不依赖 `internal/` 任何包                   |
+| **Repo 接口集中定义**    | 所有 Repo 接口在 `repo/contracts.go` 中声明          |
+| **UseCase 接口集中定义** | 所有 UseCase 接口在 `usecase/contracts.go` 中声明    |
 
 ### 依赖关系图
 
@@ -70,25 +70,25 @@ CREATE INDEX idx_notifications_user_unread
     ON notifications(user_id, is_read, created_at DESC);
 ```
 
-| 字段 | 说明 |
-|------|------|
-| `user_id` | 通知接收者（users 外键） |
-| `type` | 通知类型枚举 |
-| `title` | 通知标题 |
-| `content` | 通知正文（摘要） |
-| `meta` | 通用扩展字段（JSONB），用于存放跳转/关联信息 |
-| `is_read` | 已读标记 |
+| 字段      | 说明                                         |
+| --------- | -------------------------------------------- |
+| `user_id` | 通知接收者（users 外键）                     |
+| `type`    | 通知类型枚举                                 |
+| `title`   | 通知标题                                     |
+| `content` | 通知正文（摘要）                             |
+| `meta`    | 通用扩展字段（JSONB），用于存放跳转/关联信息 |
+| `is_read` | 已读标记                                     |
 
 #### meta 建议字段
 
-| key | 说明 |
-|-----|------|
-| `post_id` | 文章 ID（可选） |
-| `post_slug` | 文章 slug（可选） |
-| `comment_id` | 评论 ID（可选） |
-| `parent_comment_id` | 父评论 ID（可选） |
-| `target_url` | 前端可直接跳转的站内 URL（可选） |
-| `source` | 来源标记（如 `"admin"`）（可选） |
+| key                 | 说明                             |
+| ------------------- | -------------------------------- |
+| `post_id`           | 文章 ID（可选）                  |
+| `post_slug`         | 文章 slug（可选）                |
+| `comment_id`        | 评论 ID（可选）                  |
+| `parent_comment_id` | 父评论 ID（可选）                |
+| `target_url`        | 前端可直接跳转的站内 URL（可选） |
+| `source`            | 来源标记（如 `"admin"`）（可选） |
 
 ---
 
@@ -262,10 +262,10 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/scc749/nimbus-blog-api/internal/entity"
-	"github.com/scc749/nimbus-blog-api/internal/repo"
-	"github.com/scc749/nimbus-blog-api/internal/repo/persistence/gen/model"
-	"github.com/scc749/nimbus-blog-api/internal/repo/persistence/gen/query"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/entity"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo/persistence/gen/model"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo/persistence/gen/query"
 	"gorm.io/gorm"
 )
 
@@ -389,9 +389,9 @@ import (
     "encoding/json"
     "unicode/utf8"
 
-    "github.com/scc749/nimbus-blog-api/internal/entity"
-    "github.com/scc749/nimbus-blog-api/internal/repo"
-    "github.com/scc749/nimbus-blog-api/pkg/ssehub"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/entity"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/pkg/ssehub"
 )
 
 const _maxNotificationContentLen = 100
@@ -435,6 +435,7 @@ func (n *notifier) Send(ctx context.Context, notif entity.Notification) error {
 ```
 
 说明：
+
 - `notification` 事件推送的 payload 为 `entity.Notification` 的 JSON；其中 `post_slug/comment_id/target_url` 等跳转信息保存在 `meta` 内（由前端解析或通过 REST 列表获取已展开字段）。
 - `content` 会在 `repo.Notifier.Send` 内部截断（默认 100 字符，Unicode 安全截断，尾部追加 `...`），保证通知列表/推送不会携带超长正文。
 - 放在 `internal/repo/notification/` 而非 `persistence/`，因为它组合了 DB 和 Hub 两种基础设施，不是纯 Persistence 实现。命名模式类似 `repo/messaging/`（SMTP）、`repo/storage/`（MinIO）。
@@ -516,11 +517,11 @@ type Notification interface {
 
 **接口职责边界：**
 
-| 方法 | 职责 |
-|------|------|
-| `List` / `Get` / `Mark` / `Delete` | 通知 REST API（供 V1 Controller 调用） |
-| `Subscribe` / `Unsubscribe` | SSE 连接管理（供 V1 SSE Handler 调用） |
-| `SendAdminMessage` | 管理端站内消息发送（供 Admin Controller 调用） |
+| 方法                               | 职责                                           |
+| ---------------------------------- | ---------------------------------------------- |
+| `List` / `Get` / `Mark` / `Delete` | 通知 REST API（供 V1 Controller 调用）         |
+| `Subscribe` / `Unsubscribe`        | SSE 连接管理（供 V1 SSE Handler 调用）         |
+| `SendAdminMessage`                 | 管理端站内消息发送（供 Admin Controller 调用） |
 
 > 注意：通知“投递”（DB 持久化 + SSE 推送）仍由 `repo.Notifier` 承担；UseCase 仅在需要时（如 Admin 模块）封装一层输入校验与组装逻辑，避免 Controller 直连 Repo。
 
@@ -537,12 +538,12 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/scc749/nimbus-blog-api/internal/entity"
-	"github.com/scc749/nimbus-blog-api/internal/repo"
-	"github.com/scc749/nimbus-blog-api/internal/usecase"
-	"github.com/scc749/nimbus-blog-api/internal/usecase/input"
-	"github.com/scc749/nimbus-blog-api/internal/usecase/output"
-	"github.com/scc749/nimbus-blog-api/pkg/ssehub"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/entity"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/input"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/output"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/pkg/ssehub"
 )
 
 var ErrRepo = errors.New("repo")
@@ -1130,11 +1131,11 @@ Comment UC ──► repo.Notifier.Send() ──► NotificationRepo.Create() (D
 
 ### 11.2 SSE 事件类型
 
-| 事件名 | 触发时机 | Data |
-|--------|----------|------|
-| `unread_count` | 连接建立 + 未读数变化（新通知、标记已读、全部已读、删除） | `{"count": 5}` |
-| `notification` | 新通知到达 | `entity.Notification` JSON（跳转信息在 `meta` 内） |
-| `: heartbeat` | 每 30 秒 | 无（SSE 注释行，仅保活） |
+| 事件名         | 触发时机                                                  | Data                                               |
+| -------------- | --------------------------------------------------------- | -------------------------------------------------- |
+| `unread_count` | 连接建立 + 未读数变化（新通知、标记已读、全部已读、删除） | `{"count": 5}`                                     |
+| `notification` | 新通知到达                                                | `entity.Notification` JSON（跳转信息在 `meta` 内） |
+| `: heartbeat`  | 每 30 秒                                                  | 无（SSE 注释行，仅保活）                           |
 
 ### 11.3 连接生命周期
 
@@ -1176,13 +1177,13 @@ GET /api/v1/notifications/stream?token=eyJhbGciOiJIUzI1NiIs...
 
 ### 11.5 异常处理
 
-| 场景 | 处理 |
-|------|------|
-| 客户端断开 | `w.Flush()` 返回 error → handler return → `defer Unsubscribe()` |
-| 慢客户端 | channel 缓冲区满 → `select default` 丢弃事件 |
-| 浏览器不支持 SSE | 降级到 `GET /notifications/unread` 轮询 |
-| 代理超时 | 30s 心跳 + `X-Accel-Buffering: no` |
-| 服务端重启 | 连接断开 → `EventSource` 自动重连 → 重新 Subscribe |
+| 场景             | 处理                                                            |
+| ---------------- | --------------------------------------------------------------- |
+| 客户端断开       | `w.Flush()` 返回 error → handler return → `defer Unsubscribe()` |
+| 慢客户端         | channel 缓冲区满 → `select default` 丢弃事件                    |
+| 浏览器不支持 SSE | 降级到 `GET /notifications/unread` 轮询                         |
+| 代理超时         | 30s 心跳 + `X-Accel-Buffering: no`                              |
+| 服务端重启       | 连接断开 → `EventSource` 自动重连 → 重新 Subscribe              |
 
 ---
 
@@ -1196,36 +1197,43 @@ GET /api/v1/notifications/stream?token=eyJhbGciOiJIUzI1NiIs...
 import { useEffect, useRef, useCallback } from "react";
 
 interface Options {
-    token: string | null;
-    onUnreadCount?: (count: number) => void;
-    onNotification?: (n: NotificationDetail) => void;
+  token: string | null;
+  onUnreadCount?: (count: number) => void;
+  onNotification?: (n: NotificationDetail) => void;
 }
 
-export function useNotificationSSE({ token, onUnreadCount, onNotification }: Options) {
-    const esRef = useRef<EventSource | null>(null);
+export function useNotificationSSE({
+  token,
+  onUnreadCount,
+  onNotification,
+}: Options) {
+  const esRef = useRef<EventSource | null>(null);
 
-    const connect = useCallback(() => {
-        if (!token) return;
-        esRef.current?.close();
+  const connect = useCallback(() => {
+    if (!token) return;
+    esRef.current?.close();
 
-        const es = new EventSource(
-            `${process.env.NEXT_PUBLIC_API_BASE}/api/v1/notifications/stream?token=${token}`
-        );
+    const es = new EventSource(
+      `${process.env.NEXT_PUBLIC_API_BASE}/api/v1/notifications/stream?token=${token}`,
+    );
 
-        es.addEventListener("unread_count", (e) => {
-            onUnreadCount?.(JSON.parse(e.data).count);
-        });
-        es.addEventListener("notification", (e) => {
-            onNotification?.(JSON.parse(e.data));
-        });
+    es.addEventListener("unread_count", (e) => {
+      onUnreadCount?.(JSON.parse(e.data).count);
+    });
+    es.addEventListener("notification", (e) => {
+      onNotification?.(JSON.parse(e.data));
+    });
 
-        esRef.current = es;
-    }, [token, onUnreadCount, onNotification]);
+    esRef.current = es;
+  }, [token, onUnreadCount, onNotification]);
 
-    useEffect(() => {
-        connect();
-        return () => { esRef.current?.close(); esRef.current = null; };
-    }, [connect]);
+  useEffect(() => {
+    connect();
+    return () => {
+      esRef.current?.close();
+      esRef.current = null;
+    };
+  }, [connect]);
 }
 ```
 
@@ -1241,38 +1249,46 @@ import { useNotificationSSE } from "@/hooks/useNotificationSSE";
 import { useAuth } from "@/contexts/AuthContext";
 
 interface NotificationContextType {
-    unreadCount: number;
-    latestNotifications: NotificationDetail[];
-    refreshCount: () => void;
+  unreadCount: number;
+  latestNotifications: NotificationDetail[];
+  refreshCount: () => void;
 }
 
 const NotificationContext = createContext<NotificationContextType>({
-    unreadCount: 0, latestNotifications: [], refreshCount: () => {},
+  unreadCount: 0,
+  latestNotifications: [],
+  refreshCount: () => {},
 });
 
-export function NotificationProvider({ children }: { children: React.ReactNode }) {
-    const { token, isLoggedIn } = useAuth();
-    const [unreadCount, setUnreadCount] = useState(0);
-    const [latest, setLatest] = useState<NotificationDetail[]>([]);
+export function NotificationProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const { token, isLoggedIn } = useAuth();
+  const [unreadCount, setUnreadCount] = useState(0);
+  const [latest, setLatest] = useState<NotificationDetail[]>([]);
 
-    useNotificationSSE({
-        token: isLoggedIn ? token : null,
-        onUnreadCount: useCallback((c: number) => setUnreadCount(c), []),
-        onNotification: useCallback((n: NotificationDetail) => {
-            setLatest((prev) => [n, ...prev].slice(0, 5));
-        }, []),
-    });
+  useNotificationSSE({
+    token: isLoggedIn ? token : null,
+    onUnreadCount: useCallback((c: number) => setUnreadCount(c), []),
+    onNotification: useCallback((n: NotificationDetail) => {
+      setLatest((prev) => [n, ...prev].slice(0, 5));
+    }, []),
+  });
 
-    const refreshCount = useCallback(async () => {
-        const res = await getUnreadCount();
-        setUnreadCount(res.count);
-    }, []);
+  const refreshCount = useCallback(async () => {
+    const res = await getUnreadCount();
+    setUnreadCount(res.count);
+  }, []);
 
-    return (
-        <NotificationContext.Provider value={{ unreadCount, latestNotifications: latest, refreshCount }}>
-            {children}
-        </NotificationContext.Provider>
-    );
+  return (
+    <NotificationContext.Provider
+      value={{ unreadCount, latestNotifications: latest, refreshCount }}
+    >
+      {children}
+    </NotificationContext.Provider>
+  );
 }
 
 export const useNotifications = () => useContext(NotificationContext);
@@ -1280,13 +1296,13 @@ export const useNotifications = () => useContext(NotificationContext);
 
 ### 12.3 组件清单
 
-| 组件 | 位置 | 说明 |
-|------|------|------|
-| `useNotificationSSE` | Hook | SSE 连接管理 |
-| `NotificationProvider` | Context | 全局状态（未读数 + 最新通知） |
-| `NotificationBell` | Navbar 右侧 | 铃铛 + Badge 未读数 |
-| `NotificationDropdown` | 点击铃铛 | Popover 最近 5 条 + "查看全部" |
-| `NotificationsPage` | `/notifications` | 完整列表 + 分页 + 筛选 |
+| 组件                   | 位置             | 说明                           |
+| ---------------------- | ---------------- | ------------------------------ |
+| `useNotificationSSE`   | Hook             | SSE 连接管理                   |
+| `NotificationProvider` | Context          | 全局状态（未读数 + 最新通知）  |
+| `NotificationBell`     | Navbar 右侧      | 铃铛 + Badge 未读数            |
+| `NotificationDropdown` | 点击铃铛         | Popover 最近 5 条 + "查看全部" |
+| `NotificationsPage`    | `/notifications` | 完整列表 + 分页 + 筛选         |
 
 ### 12.4 HeroUI 组件
 
@@ -1298,14 +1314,30 @@ export const useNotifications = () => useContext(NotificationContext);
 
 ```ts
 // V1
-export async function listNotifications(query?: ListNotificationsQuery): Promise<Page<NotificationDetail>> { /* ... */ }
-export async function getUnreadCount(): Promise<{ count: number }> { /* ... */ }
-export async function markRead(id: number): Promise<void> { /* ... */ }
-export async function markAllRead(): Promise<void> { /* ... */ }
-export async function deleteNotification(id: number): Promise<void> { /* ... */ }
+export async function listNotifications(
+  query?: ListNotificationsQuery,
+): Promise<Page<NotificationDetail>> {
+  /* ... */
+}
+export async function getUnreadCount(): Promise<{ count: number }> {
+  /* ... */
+}
+export async function markRead(id: number): Promise<void> {
+  /* ... */
+}
+export async function markAllRead(): Promise<void> {
+  /* ... */
+}
+export async function deleteNotification(id: number): Promise<void> {
+  /* ... */
+}
 
 // Admin
-export async function sendNotification(body: SendNotificationBody): Promise<void> { /* ... */ }
+export async function sendNotification(
+  body: SendNotificationBody,
+): Promise<void> {
+  /* ... */
+}
 ```
 
 ---

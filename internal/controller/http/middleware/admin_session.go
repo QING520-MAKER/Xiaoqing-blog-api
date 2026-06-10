@@ -3,10 +3,10 @@ package middleware
 import (
 	"net/http"
 
+	adminresp "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/admin/response"
+	sharedresp "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/shared"
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/session"
-	adminresp "github.com/scc749/nimbus-blog-api/internal/controller/http/admin/response"
-	sharedresp "github.com/scc749/nimbus-blog-api/internal/controller/http/shared"
 )
 
 func NewAdminSessionMiddleware(store *session.Store) fiber.Handler {

@@ -1,5 +1,5 @@
 app:
-  name: nimbus-blog
+  name: Xiaoqing-blog
   version: 1.0.0
 
 log:
@@ -57,7 +57,7 @@ jwt:
   refresh_secret: gpoOkMHJS4r4Uk5Oq0_fJlvZcBSPxdteDr64p1AR6SEOcAmBgYpfC0lw5bi2kWiXBgRItvN4nCCTg2i0XwR5UA
   access_ttl: 15m
   refresh_ttl: 168h
-  issuer: nimbus-blog
+  issuer: Xiaoqing-blog
 
 twofa:
   qr_width: 200

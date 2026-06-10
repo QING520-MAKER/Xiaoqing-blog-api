@@ -3,12 +3,12 @@ package v1
 import (
 	"net/http"
 
+	sharedresp "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/shared"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/v1/request"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/v1/response"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/entity"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/input"
 	"github.com/gofiber/fiber/v3"
-	sharedresp "github.com/scc749/nimbus-blog-api/internal/controller/http/shared"
-	"github.com/scc749/nimbus-blog-api/internal/controller/http/v1/request"
-	"github.com/scc749/nimbus-blog-api/internal/controller/http/v1/response"
-	"github.com/scc749/nimbus-blog-api/internal/entity"
-	"github.com/scc749/nimbus-blog-api/internal/usecase/input"
 )
 
 // @Summary 提交反馈

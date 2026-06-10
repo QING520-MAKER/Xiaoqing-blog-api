@@ -5,9 +5,9 @@ import (
 	"runtime/debug"
 	"strings"
 
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/pkg/logger"
 	"github.com/gofiber/fiber/v3"
 	fiberRecover "github.com/gofiber/fiber/v3/middleware/recover"
-	"github.com/scc749/nimbus-blog-api/pkg/logger"
 )
 
 func buildPanicMessage(ctx fiber.Ctx, err interface{}) string {

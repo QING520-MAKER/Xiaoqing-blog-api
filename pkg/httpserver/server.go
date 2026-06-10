@@ -6,9 +6,9 @@ import (
 	"errors"
 	"time"
 
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/pkg/logger"
 	"github.com/goccy/go-json"
 	"github.com/gofiber/fiber/v3"
-	"github.com/scc749/nimbus-blog-api/pkg/logger"
 	"golang.org/x/sync/errgroup"
 )
 

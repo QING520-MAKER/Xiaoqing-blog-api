@@ -5,8 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/scc749/nimbus-blog-api/config"
-	"github.com/scc749/nimbus-blog-api/pkg/postgres"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/config"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/pkg/postgres"
 	"gorm.io/gen"
 )
 

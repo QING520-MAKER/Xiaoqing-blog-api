@@ -1,6 +1,6 @@
 package response
 
-import codes "github.com/scc749/nimbus-blog-api/internal/controller/http/bizcode"
+import codes "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/bizcode"
 
 const (
 	Success = codes.Success

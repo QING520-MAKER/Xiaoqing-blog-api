@@ -3,9 +3,9 @@ package v1
 import (
 	"net/http"
 
+	sharedresp "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/shared"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/v1/response"
 	"github.com/gofiber/fiber/v3"
-	sharedresp "github.com/scc749/nimbus-blog-api/internal/controller/http/shared"
-	"github.com/scc749/nimbus-blog-api/internal/controller/http/v1/response"
 )
 
 // @Summary 友链列表

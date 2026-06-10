@@ -1,10 +1,10 @@
 package admin
 
 import (
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/pkg/logger"
 	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v3/middleware/session"
-	"github.com/scc749/nimbus-blog-api/internal/usecase"
-	"github.com/scc749/nimbus-blog-api/pkg/logger"
 )
 
 type Admin struct {

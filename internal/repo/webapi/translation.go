@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	translator "github.com/Conight/go-googletrans"
-	"github.com/scc749/nimbus-blog-api/internal/repo"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo"
 )
 
 type translationWebAPI struct {

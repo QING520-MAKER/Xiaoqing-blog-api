@@ -1,6 +1,6 @@
 package response
 
-import sharedresp "github.com/scc749/nimbus-blog-api/internal/controller/http/shared"
+import sharedresp "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/shared"
 
 type FileDetailPage = sharedresp.Page[FileDetail]
 type UserDetailPage = sharedresp.Page[UserDetail]

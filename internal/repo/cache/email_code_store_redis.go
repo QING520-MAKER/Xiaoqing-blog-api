@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/scc749/nimbus-blog-api/internal/repo"
-	"github.com/scc749/nimbus-blog-api/pkg/redis"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/pkg/redis"
 )
 
 // emailCodeRedisStore stores email verification codes in Redis with TTL.

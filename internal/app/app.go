@@ -7,7 +7,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/scc749/nimbus-blog-api/config"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/config"
 )
 
 func Run(cfg *config.Config) {

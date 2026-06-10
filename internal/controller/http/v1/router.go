@@ -1,12 +1,12 @@
 package v1
 
 import (
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/middleware"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase"
+	authUC "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/auth/user"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/pkg/logger"
 	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v3"
-	"github.com/scc749/nimbus-blog-api/internal/controller/http/middleware"
-	"github.com/scc749/nimbus-blog-api/internal/usecase"
-	authUC "github.com/scc749/nimbus-blog-api/internal/usecase/auth/user"
-	"github.com/scc749/nimbus-blog-api/pkg/logger"
 )
 
 func NewCaptchaRoutes(apiV1Group fiber.Router, l logger.Interface, c usecase.Captcha) {

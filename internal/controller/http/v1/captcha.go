@@ -4,10 +4,10 @@ import (
 	"errors"
 	"net/http"
 
+	sharedresp "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/shared"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/v1/response"
+	captchaUC "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/captcha"
 	"github.com/gofiber/fiber/v3"
-	sharedresp "github.com/scc749/nimbus-blog-api/internal/controller/http/shared"
-	"github.com/scc749/nimbus-blog-api/internal/controller/http/v1/response"
-	captchaUC "github.com/scc749/nimbus-blog-api/internal/usecase/captcha"
 )
 
 // @Summary 生成验证码

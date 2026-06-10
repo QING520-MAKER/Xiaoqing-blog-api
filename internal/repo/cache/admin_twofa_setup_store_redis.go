@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/pkg/redis"
 	json "github.com/goccy/go-json"
-	"github.com/scc749/nimbus-blog-api/internal/repo"
-	"github.com/scc749/nimbus-blog-api/pkg/redis"
 )
 
 type adminTwoFASetupValue struct {

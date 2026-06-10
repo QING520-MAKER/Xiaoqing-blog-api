@@ -5,11 +5,11 @@ import (
 	"net/http"
 	"strings"
 
+	sharedresp "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/shared"
+	v1resp "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/v1/response"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase"
+	authUC "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/auth/user"
 	"github.com/gofiber/fiber/v3"
-	sharedresp "github.com/scc749/nimbus-blog-api/internal/controller/http/shared"
-	v1resp "github.com/scc749/nimbus-blog-api/internal/controller/http/v1/response"
-	"github.com/scc749/nimbus-blog-api/internal/usecase"
-	authUC "github.com/scc749/nimbus-blog-api/internal/usecase/auth/user"
 )
 
 const refreshCookieName = "refresh_token"

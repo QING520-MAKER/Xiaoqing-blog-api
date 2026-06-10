@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 	"unicode/utf8"
 
-	"github.com/scc749/nimbus-blog-api/internal/entity"
-	"github.com/scc749/nimbus-blog-api/internal/repo"
-	"github.com/scc749/nimbus-blog-api/pkg/ssehub"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/entity"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/pkg/ssehub"
 )
 
 const _maxNotificationContentLen = 100

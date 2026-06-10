@@ -4,11 +4,11 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/admin/request"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/admin/response"
+	sharedresp "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/shared"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/input"
 	"github.com/gofiber/fiber/v3"
-	"github.com/scc749/nimbus-blog-api/internal/controller/http/admin/request"
-	"github.com/scc749/nimbus-blog-api/internal/controller/http/admin/response"
-	sharedresp "github.com/scc749/nimbus-blog-api/internal/controller/http/shared"
-	"github.com/scc749/nimbus-blog-api/internal/usecase/input"
 )
 
 // @Summary 反馈列表

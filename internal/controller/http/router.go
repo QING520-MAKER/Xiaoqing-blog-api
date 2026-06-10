@@ -4,19 +4,19 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/config"
+	_ "github.com/QING520-MAKER/Xiaoqing-blog-api/docs"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/admin"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/middleware"
+	v1 "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/controller/http/v1"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase"
+	authUC "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/auth/user"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/pkg/logger"
 	swaggo "github.com/gofiber/contrib/v3/swaggo"
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/cors"
 	"github.com/gofiber/fiber/v3/middleware/session"
 	redisstore "github.com/gofiber/storage/redis/v3"
-	"github.com/scc749/nimbus-blog-api/config"
-	_ "github.com/scc749/nimbus-blog-api/docs"
-	"github.com/scc749/nimbus-blog-api/internal/controller/http/admin"
-	"github.com/scc749/nimbus-blog-api/internal/controller/http/middleware"
-	v1 "github.com/scc749/nimbus-blog-api/internal/controller/http/v1"
-	"github.com/scc749/nimbus-blog-api/internal/usecase"
-	authUC "github.com/scc749/nimbus-blog-api/internal/usecase/auth/user"
-	"github.com/scc749/nimbus-blog-api/pkg/logger"
 )
 
 func NewRouter(app *fiber.App, cfg *config.Config, l logger.Interface, auth usecase.Auth, captcha usecase.Captcha, email usecase.Email, signer authUC.TokenSigner, file usecase.File, user usecase.User, content usecase.Content, comment usecase.Comment, feedback usecase.Feedback, link usecase.Link, setting usecase.Setting, notificationUC usecase.Notification) {

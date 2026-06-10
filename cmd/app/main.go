@@ -1,8 +1,8 @@
 package main
 
-// @title Nimbus Blog API
+// @title Xiaoqing Blog API
 // @version 1.0
-// @description Nimbus Blog 后端 API（Admin + Public V1）。
+// @description Xiaoqing Blog 后端 API（Admin + Public V1）。
 // @BasePath /api
 // @schemes http https
 // @securityDefinitions.apikey BearerAuth
@@ -15,9 +15,9 @@ package main
 import (
 	"log"
 
-	"github.com/scc749/nimbus-blog-api/config"
-	_ "github.com/scc749/nimbus-blog-api/docs"
-	"github.com/scc749/nimbus-blog-api/internal/app"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/config"
+	_ "github.com/QING520-MAKER/Xiaoqing-blog-api/docs"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/app"
 )
 
 func main() {

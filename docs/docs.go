@@ -39,7 +39,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.TwoFAAuth"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.TwoFAAuth"
                         }
                     }
                 ],
@@ -47,31 +47,31 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -101,7 +101,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.TwoFAAuth"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.TwoFAAuth"
                         }
                     }
                 ],
@@ -111,13 +111,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.ResetRecoveryCodes"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.ResetRecoveryCodes"
                                         }
                                     }
                                 }
@@ -127,25 +127,25 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -176,7 +176,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.TwoFASetup"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.TwoFASetup"
                         }
                     }
                 ],
@@ -186,13 +186,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.TwoFASetupStart"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.TwoFASetupStart"
                                         }
                                     }
                                 }
@@ -202,25 +202,25 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -251,7 +251,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.TwoFAVerify"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.TwoFAVerify"
                         }
                     }
                 ],
@@ -261,13 +261,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.TwoFAVerifyResult"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.TwoFAVerifyResult"
                                         }
                                     }
                                 }
@@ -277,25 +277,25 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -321,7 +321,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.Login"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.Login"
                         }
                     }
                 ],
@@ -331,13 +331,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.Login"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.Login"
                                         }
                                     }
                                 }
@@ -347,25 +347,25 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -385,7 +385,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -415,7 +415,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.ChangePassword"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.ChangePassword"
                         }
                     }
                 ],
@@ -423,31 +423,31 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -473,13 +473,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.AdminProfile"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.AdminProfile"
                                         }
                                     }
                                 }
@@ -489,19 +489,19 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -529,7 +529,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateProfile"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateProfile"
                         }
                     }
                 ],
@@ -537,31 +537,31 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -586,7 +586,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.ResetPassword"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.ResetPassword"
                         }
                     }
                 ],
@@ -594,31 +594,31 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -686,13 +686,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CommentDetailPage"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CommentDetailPage"
                                         }
                                     }
                                 }
@@ -702,13 +702,13 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -741,25 +741,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -796,7 +796,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateCommentStatus"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateCommentStatus"
                         }
                     }
                 ],
@@ -804,25 +804,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -891,13 +891,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CategoryDetailPage"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CategoryDetailPage"
                                         }
                                     }
                                 }
@@ -907,13 +907,13 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -941,7 +941,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.CreateCategory"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.CreateCategory"
                         }
                     }
                 ],
@@ -951,13 +951,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CreateCategory"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CreateCategory"
                                         }
                                     }
                                 }
@@ -967,19 +967,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1016,7 +1016,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateCategory"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateCategory"
                         }
                     }
                 ],
@@ -1024,25 +1024,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1073,25 +1073,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1121,7 +1121,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.GenerateSlug"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.GenerateSlug"
                         }
                     }
                 ],
@@ -1131,13 +1131,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.GenerateSlug"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.GenerateSlug"
                                         }
                                     }
                                 }
@@ -1147,25 +1147,25 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "422": {
                         "description": "Unprocessable Entity",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1260,13 +1260,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.PostSummaryPage"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.PostSummaryPage"
                                         }
                                     }
                                 }
@@ -1276,13 +1276,13 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1310,7 +1310,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.CreatePost"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.CreatePost"
                         }
                     }
                 ],
@@ -1320,13 +1320,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CreatePost"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CreatePost"
                                         }
                                     }
                                 }
@@ -1336,19 +1336,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1383,13 +1383,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.PostDetail"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.PostDetail"
                                         }
                                     }
                                 }
@@ -1399,25 +1399,25 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1452,7 +1452,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdatePost"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdatePost"
                         }
                     }
                 ],
@@ -1460,25 +1460,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1509,25 +1509,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1596,13 +1596,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.TagDetailPage"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.TagDetailPage"
                                         }
                                     }
                                 }
@@ -1612,13 +1612,13 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1646,7 +1646,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.CreateTag"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.CreateTag"
                         }
                     }
                 ],
@@ -1656,13 +1656,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CreateTag"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CreateTag"
                                         }
                                     }
                                 }
@@ -1672,19 +1672,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1721,7 +1721,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateTag"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateTag"
                         }
                     }
                 ],
@@ -1729,25 +1729,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1778,25 +1778,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1864,13 +1864,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.FeedbackDetailPage"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.FeedbackDetailPage"
                                         }
                                     }
                                 }
@@ -1880,13 +1880,13 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1921,13 +1921,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.FeedbackDetail"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.FeedbackDetail"
                                         }
                                     }
                                 }
@@ -1937,19 +1937,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -1980,25 +1980,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2035,7 +2035,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateFeedbackStatus"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateFeedbackStatus"
                         }
                     }
                 ],
@@ -2043,25 +2043,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2130,13 +2130,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.FileDetailPage"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.FileDetailPage"
                                         }
                                     }
                                 }
@@ -2146,13 +2146,13 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2182,7 +2182,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.GenerateUploadURL"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.GenerateUploadURL"
                         }
                     }
                 ],
@@ -2192,13 +2192,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.FileUploadURL"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.FileUploadURL"
                                         }
                                     }
                                 }
@@ -2208,25 +2208,25 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "502": {
                         "description": "Bad Gateway",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2259,25 +2259,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "502": {
                         "description": "Bad Gateway",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2347,13 +2347,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.LinkDetailPage"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.LinkDetailPage"
                                         }
                                     }
                                 }
@@ -2363,13 +2363,13 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2397,7 +2397,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.CreateLink"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.CreateLink"
                         }
                     }
                 ],
@@ -2407,13 +2407,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CreateLink"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CreateLink"
                                         }
                                     }
                                 }
@@ -2423,19 +2423,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2472,7 +2472,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateLink"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateLink"
                         }
                     }
                 ],
@@ -2480,25 +2480,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2529,25 +2529,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2577,7 +2577,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.SendNotification"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.SendNotification"
                         }
                     }
                 ],
@@ -2585,25 +2585,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2629,7 +2629,7 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
@@ -2637,7 +2637,7 @@ const docTemplate = `{
                                         "data": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.SiteSettingDetail"
+                                                "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.SiteSettingDetail"
                                             }
                                         }
                                     }
@@ -2648,13 +2648,13 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2689,13 +2689,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.SiteSettingDetail"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.SiteSettingDetail"
                                         }
                                     }
                                 }
@@ -2705,19 +2705,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2752,7 +2752,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpsertSiteSetting"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpsertSiteSetting"
                         }
                     }
                 ],
@@ -2760,25 +2760,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2852,13 +2852,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.UserDetailPage"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.UserDetailPage"
                                         }
                                     }
                                 }
@@ -2868,13 +2868,13 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2911,7 +2911,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateUserStatus"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateUserStatus"
                         }
                     }
                 ],
@@ -2919,25 +2919,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -2962,7 +2962,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.ForgotPassword"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.ForgotPassword"
                         }
                     }
                 ],
@@ -2970,25 +2970,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3014,7 +3014,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.Login"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.Login"
                         }
                     }
                 ],
@@ -3024,13 +3024,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.Login"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.Login"
                                         }
                                     }
                                 }
@@ -3040,31 +3040,31 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "403": {
                         "description": "Forbidden",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3089,13 +3089,13 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3117,13 +3117,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.Refresh"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.Refresh"
                                         }
                                     }
                                 }
@@ -3133,31 +3133,31 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "403": {
                         "description": "Forbidden",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3182,7 +3182,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.Register"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.Register"
                         }
                     }
                 ],
@@ -3192,13 +3192,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.Register"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.Register"
                                         }
                                     }
                                 }
@@ -3208,19 +3208,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3241,13 +3241,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.Captcha"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.Captcha"
                                         }
                                     }
                                 }
@@ -3257,7 +3257,7 @@ const docTemplate = `{
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3290,31 +3290,31 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "403": {
                         "description": "Forbidden",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3349,13 +3349,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.LikeInfo"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.LikeInfo"
                                         }
                                     }
                                 }
@@ -3365,19 +3365,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3410,13 +3410,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.LikeInfo"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.LikeInfo"
                                         }
                                     }
                                 }
@@ -3426,19 +3426,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3459,7 +3459,7 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
@@ -3467,7 +3467,7 @@ const docTemplate = `{
                                         "data": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.CategoryDetail"
+                                                "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.CategoryDetail"
                                             }
                                         }
                                     }
@@ -3478,7 +3478,7 @@ const docTemplate = `{
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3534,13 +3534,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.PostSummaryPage"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.PostSummaryPage"
                                         }
                                     }
                                 }
@@ -3550,7 +3550,7 @@ const docTemplate = `{
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3581,7 +3581,7 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
@@ -3589,7 +3589,7 @@ const docTemplate = `{
                                         "data": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.CommentBasic"
+                                                "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.CommentBasic"
                                             }
                                         }
                                     }
@@ -3600,13 +3600,13 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3641,7 +3641,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.SubmitComment"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.SubmitComment"
                         }
                     }
                 ],
@@ -3649,25 +3649,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3702,13 +3702,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.LikeInfo"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.LikeInfo"
                                         }
                                     }
                                 }
@@ -3718,19 +3718,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3763,13 +3763,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.LikeInfo"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.LikeInfo"
                                         }
                                     }
                                 }
@@ -3779,19 +3779,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3822,13 +3822,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.PostDetail"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.PostDetail"
                                         }
                                     }
                                 }
@@ -3838,19 +3838,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3871,7 +3871,7 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
@@ -3879,7 +3879,7 @@ const docTemplate = `{
                                         "data": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.TagDetail"
+                                                "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.TagDetail"
                                             }
                                         }
                                     }
@@ -3890,7 +3890,7 @@ const docTemplate = `{
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3915,7 +3915,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.SendCode"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.SendCode"
                         }
                     }
                 ],
@@ -3923,25 +3923,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "502": {
                         "description": "Bad Gateway",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -3966,7 +3966,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.SubmitFeedback"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.SubmitFeedback"
                         }
                     }
                 ],
@@ -3974,19 +3974,19 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -4017,13 +4017,13 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "502": {
                         "description": "Bad Gateway",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -4044,7 +4044,7 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
@@ -4052,7 +4052,7 @@ const docTemplate = `{
                                         "data": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.LinkDetail"
+                                                "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.LinkDetail"
                                             }
                                         }
                                     }
@@ -4063,7 +4063,7 @@ const docTemplate = `{
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -4131,13 +4131,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.NotificationDetailPage"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.NotificationDetailPage"
                                         }
                                     }
                                 }
@@ -4147,13 +4147,13 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -4177,19 +4177,19 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -4221,7 +4221,7 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -4247,13 +4247,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.UnreadCount"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.UnreadCount"
                                         }
                                     }
                                 }
@@ -4263,13 +4263,13 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -4302,25 +4302,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -4353,25 +4353,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -4392,7 +4392,7 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
@@ -4400,7 +4400,7 @@ const docTemplate = `{
                                         "data": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.SiteSettingDetail"
+                                                "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.SiteSettingDetail"
                                             }
                                         }
                                     }
@@ -4411,7 +4411,7 @@ const docTemplate = `{
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -4437,13 +4437,13 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                                 },
                                 {
                                     "type": "object",
                                     "properties": {
                                         "data": {
-                                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.UserProfile"
+                                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.UserProfile"
                                         }
                                     }
                                 }
@@ -4453,19 +4453,19 @@ const docTemplate = `{
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -4495,7 +4495,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.ChangePassword"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.ChangePassword"
                         }
                     }
                 ],
@@ -4503,31 +4503,31 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -4557,7 +4557,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.UpdateProfile"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.UpdateProfile"
                         }
                     }
                 ],
@@ -4565,31 +4565,31 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "401": {
                         "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope"
+                            "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope"
                         }
                     }
                 }
@@ -4597,7 +4597,7 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.ChangePassword": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.ChangePassword": {
             "type": "object",
             "required": [
                 "new_password",
@@ -4616,7 +4616,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.CreateCategory": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.CreateCategory": {
             "type": "object",
             "required": [
                 "name",
@@ -4635,7 +4635,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.CreateLink": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.CreateLink": {
             "type": "object",
             "required": [
                 "name",
@@ -4673,7 +4673,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.CreatePost": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.CreatePost": {
             "type": "object",
             "required": [
                 "author_id",
@@ -4733,7 +4733,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.CreateTag": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.CreateTag": {
             "type": "object",
             "required": [
                 "name",
@@ -4752,7 +4752,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.GenerateSlug": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.GenerateSlug": {
             "type": "object",
             "required": [
                 "input"
@@ -4765,7 +4765,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.GenerateUploadURL": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.GenerateUploadURL": {
             "type": "object",
             "required": [
                 "content_type",
@@ -4811,7 +4811,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.Login": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.Login": {
             "type": "object",
             "required": [
                 "password",
@@ -4838,7 +4838,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.ResetPassword": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.ResetPassword": {
             "type": "object",
             "required": [
                 "new_password",
@@ -4863,7 +4863,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.SendNotification": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.SendNotification": {
             "type": "object",
             "required": [
                 "content",
@@ -4887,7 +4887,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.TwoFAAuth": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.TwoFAAuth": {
             "type": "object",
             "properties": {
                 "code": {
@@ -4900,10 +4900,10 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.TwoFASetup": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.TwoFASetup": {
             "type": "object"
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.TwoFAVerify": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.TwoFAVerify": {
             "type": "object",
             "required": [
                 "code",
@@ -4920,7 +4920,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateCategory": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateCategory": {
             "type": "object",
             "required": [
                 "id",
@@ -4944,7 +4944,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateCommentStatus": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateCommentStatus": {
             "type": "object",
             "required": [
                 "id",
@@ -4965,7 +4965,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateFeedbackStatus": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateFeedbackStatus": {
             "type": "object",
             "required": [
                 "id",
@@ -4987,7 +4987,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateLink": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateLink": {
             "type": "object",
             "required": [
                 "id",
@@ -5030,7 +5030,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdatePost": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdatePost": {
             "type": "object",
             "required": [
                 "id"
@@ -5086,7 +5086,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateProfile": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateProfile": {
             "type": "object",
             "required": [
                 "nickname",
@@ -5105,7 +5105,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateTag": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateTag": {
             "type": "object",
             "required": [
                 "id",
@@ -5129,7 +5129,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpdateUserStatus": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpdateUserStatus": {
             "type": "object",
             "required": [
                 "id",
@@ -5149,7 +5149,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_request.UpsertSiteSetting": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_request.UpsertSiteSetting": {
             "type": "object",
             "required": [
                 "setting_key",
@@ -5183,7 +5183,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.AdminProfile": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.AdminProfile": {
             "type": "object",
             "properties": {
                 "nickname": {
@@ -5197,7 +5197,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.AuthorInfo": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.AuthorInfo": {
             "type": "object",
             "properties": {
                 "id": {
@@ -5211,7 +5211,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.BaseCategory": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.BaseCategory": {
             "type": "object",
             "properties": {
                 "id": {
@@ -5225,7 +5225,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.BaseTag": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.BaseTag": {
             "type": "object",
             "properties": {
                 "id": {
@@ -5239,7 +5239,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CategoryDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CategoryDetail": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -5262,7 +5262,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CategoryDetailPage": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CategoryDetailPage": {
             "type": "object",
             "properties": {
                 "current_page": {
@@ -5271,7 +5271,7 @@ const docTemplate = `{
                 "list": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CategoryDetail"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CategoryDetail"
                     }
                 },
                 "page_size": {
@@ -5285,7 +5285,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CommentDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CommentDetail": {
             "type": "object",
             "properties": {
                 "content": {
@@ -5325,11 +5325,11 @@ const docTemplate = `{
                     "type": "integer"
                 },
                 "user_profile": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.UserProfile"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.UserProfile"
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CommentDetailPage": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CommentDetailPage": {
             "type": "object",
             "properties": {
                 "current_page": {
@@ -5338,7 +5338,7 @@ const docTemplate = `{
                 "list": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CommentDetail"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CommentDetail"
                     }
                 },
                 "page_size": {
@@ -5352,7 +5352,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CreateCategory": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CreateCategory": {
             "type": "object",
             "properties": {
                 "id": {
@@ -5360,7 +5360,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CreateLink": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CreateLink": {
             "type": "object",
             "properties": {
                 "id": {
@@ -5368,7 +5368,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CreatePost": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CreatePost": {
             "type": "object",
             "properties": {
                 "id": {
@@ -5376,7 +5376,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.CreateTag": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.CreateTag": {
             "type": "object",
             "properties": {
                 "id": {
@@ -5384,7 +5384,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.FeedbackDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.FeedbackDetail": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -5422,7 +5422,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.FeedbackDetailPage": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.FeedbackDetailPage": {
             "type": "object",
             "properties": {
                 "current_page": {
@@ -5431,7 +5431,7 @@ const docTemplate = `{
                 "list": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.FeedbackDetail"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.FeedbackDetail"
                     }
                 },
                 "page_size": {
@@ -5445,7 +5445,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.FileDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.FileDetail": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -5480,7 +5480,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.FileDetailPage": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.FileDetailPage": {
             "type": "object",
             "properties": {
                 "current_page": {
@@ -5489,7 +5489,7 @@ const docTemplate = `{
                 "list": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.FileDetail"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.FileDetail"
                     }
                 },
                 "page_size": {
@@ -5503,7 +5503,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.FileUploadURL": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.FileUploadURL": {
             "type": "object",
             "properties": {
                 "expires": {
@@ -5520,7 +5520,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.GenerateSlug": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.GenerateSlug": {
             "type": "object",
             "properties": {
                 "slug": {
@@ -5528,7 +5528,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.LinkDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.LinkDetail": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -5560,7 +5560,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.LinkDetailPage": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.LinkDetailPage": {
             "type": "object",
             "properties": {
                 "current_page": {
@@ -5569,7 +5569,7 @@ const docTemplate = `{
                 "list": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.LinkDetail"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.LinkDetail"
                     }
                 },
                 "page_size": {
@@ -5583,7 +5583,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.Login": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.Login": {
             "type": "object",
             "properties": {
                 "otp_required": {
@@ -5594,17 +5594,17 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.PostDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.PostDetail": {
             "type": "object",
             "properties": {
                 "author": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.AuthorInfo"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.AuthorInfo"
                 },
                 "author_id": {
                     "type": "integer"
                 },
                 "category": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.BaseCategory"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.BaseCategory"
                 },
                 "content": {
                     "type": "string"
@@ -5648,7 +5648,7 @@ const docTemplate = `{
                 "tags": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.BaseTag"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.BaseTag"
                     }
                 },
                 "title": {
@@ -5662,17 +5662,17 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.PostSummary": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.PostSummary": {
             "type": "object",
             "properties": {
                 "author": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.AuthorInfo"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.AuthorInfo"
                 },
                 "author_id": {
                     "type": "integer"
                 },
                 "category": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.BaseCategory"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.BaseCategory"
                 },
                 "created_at": {
                     "type": "string"
@@ -5707,7 +5707,7 @@ const docTemplate = `{
                 "tags": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.BaseTag"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.BaseTag"
                     }
                 },
                 "title": {
@@ -5721,7 +5721,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.PostSummaryPage": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.PostSummaryPage": {
             "type": "object",
             "properties": {
                 "current_page": {
@@ -5730,7 +5730,7 @@ const docTemplate = `{
                 "list": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.PostSummary"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.PostSummary"
                     }
                 },
                 "page_size": {
@@ -5744,7 +5744,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.ResetRecoveryCodes": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.ResetRecoveryCodes": {
             "type": "object",
             "properties": {
                 "recovery_codes": {
@@ -5755,7 +5755,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.SiteSettingDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.SiteSettingDetail": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -5784,7 +5784,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.TagDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.TagDetail": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -5807,7 +5807,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.TagDetailPage": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.TagDetailPage": {
             "type": "object",
             "properties": {
                 "current_page": {
@@ -5816,7 +5816,7 @@ const docTemplate = `{
                 "list": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.TagDetail"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.TagDetail"
                     }
                 },
                 "page_size": {
@@ -5830,7 +5830,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.TwoFASetupStart": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.TwoFASetupStart": {
             "type": "object",
             "properties": {
                 "qrcode_image_base64": {
@@ -5844,7 +5844,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.TwoFAVerifyResult": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.TwoFAVerifyResult": {
             "type": "object",
             "properties": {
                 "enabled": {
@@ -5861,7 +5861,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.UserDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.UserDetail": {
             "type": "object",
             "properties": {
                 "auth_openid": {
@@ -5908,7 +5908,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.UserDetailPage": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.UserDetailPage": {
             "type": "object",
             "properties": {
                 "current_page": {
@@ -5917,7 +5917,7 @@ const docTemplate = `{
                 "list": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.UserDetail"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.UserDetail"
                     }
                 },
                 "page_size": {
@@ -5931,7 +5931,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_admin_response.UserProfile": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_admin_response.UserProfile": {
             "type": "object",
             "properties": {
                 "avatar": {
@@ -5957,7 +5957,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_shared.Envelope": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_shared.Envelope": {
             "type": "object",
             "properties": {
                 "code": {
@@ -5971,7 +5971,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.ChangePassword": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.ChangePassword": {
             "type": "object",
             "required": [
                 "new_password",
@@ -5990,7 +5990,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.ForgotPassword": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.ForgotPassword": {
             "type": "object",
             "required": [
                 "code",
@@ -6011,7 +6011,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.Login": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.Login": {
             "type": "object",
             "required": [
                 "captcha",
@@ -6038,7 +6038,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.Register": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.Register": {
             "type": "object",
             "required": [
                 "code",
@@ -6065,7 +6065,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.SendCode": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.SendCode": {
             "type": "object",
             "required": [
                 "captcha",
@@ -6088,7 +6088,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.SubmitComment": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.SubmitComment": {
             "type": "object",
             "required": [
                 "content"
@@ -6104,7 +6104,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.SubmitFeedback": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.SubmitFeedback": {
             "type": "object",
             "required": [
                 "email",
@@ -6143,7 +6143,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_request.UpdateProfile": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_request.UpdateProfile": {
             "type": "object",
             "properties": {
                 "bio": {
@@ -6167,7 +6167,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.AuthorInfo": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.AuthorInfo": {
             "type": "object",
             "properties": {
                 "id": {
@@ -6181,7 +6181,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.BaseCategory": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.BaseCategory": {
             "type": "object",
             "properties": {
                 "id": {
@@ -6195,7 +6195,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.BaseTag": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.BaseTag": {
             "type": "object",
             "properties": {
                 "id": {
@@ -6209,7 +6209,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.Captcha": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.Captcha": {
             "type": "object",
             "properties": {
                 "captcha_id": {
@@ -6220,7 +6220,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.CategoryDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.CategoryDetail": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -6243,7 +6243,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.CommentBasic": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.CommentBasic": {
             "type": "object",
             "properties": {
                 "content": {
@@ -6256,7 +6256,7 @@ const docTemplate = `{
                     "type": "integer"
                 },
                 "like": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.LikeInfo"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.LikeInfo"
                 },
                 "parent_id": {
                     "type": "integer"
@@ -6271,11 +6271,11 @@ const docTemplate = `{
                     "type": "integer"
                 },
                 "user_profile": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.CommentUserProfile"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.CommentUserProfile"
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.CommentUserProfile": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.CommentUserProfile": {
             "type": "object",
             "properties": {
                 "avatar": {
@@ -6301,7 +6301,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.LikeInfo": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.LikeInfo": {
             "type": "object",
             "properties": {
                 "liked": {
@@ -6312,7 +6312,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.LinkDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.LinkDetail": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -6344,7 +6344,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.Login": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.Login": {
             "type": "object",
             "properties": {
                 "access_token": {
@@ -6358,7 +6358,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.NotificationDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.NotificationDetail": {
             "type": "object",
             "properties": {
                 "comment_id": {
@@ -6396,7 +6396,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.NotificationDetailPage": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.NotificationDetailPage": {
             "type": "object",
             "properties": {
                 "current_page": {
@@ -6405,7 +6405,7 @@ const docTemplate = `{
                 "list": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.NotificationDetail"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.NotificationDetail"
                     }
                 },
                 "page_size": {
@@ -6419,17 +6419,17 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.PostDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.PostDetail": {
             "type": "object",
             "properties": {
                 "author": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.AuthorInfo"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.AuthorInfo"
                 },
                 "author_id": {
                     "type": "integer"
                 },
                 "category": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.BaseCategory"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.BaseCategory"
                 },
                 "content": {
                     "type": "string"
@@ -6450,7 +6450,7 @@ const docTemplate = `{
                     "type": "boolean"
                 },
                 "like": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.LikeInfo"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.LikeInfo"
                 },
                 "meta_description": {
                     "type": "string"
@@ -6473,7 +6473,7 @@ const docTemplate = `{
                 "tags": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.BaseTag"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.BaseTag"
                     }
                 },
                 "title": {
@@ -6487,17 +6487,17 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.PostSummary": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.PostSummary": {
             "type": "object",
             "properties": {
                 "author": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.AuthorInfo"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.AuthorInfo"
                 },
                 "author_id": {
                     "type": "integer"
                 },
                 "category": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.BaseCategory"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.BaseCategory"
                 },
                 "created_at": {
                     "type": "string"
@@ -6515,7 +6515,7 @@ const docTemplate = `{
                     "type": "boolean"
                 },
                 "like": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.LikeInfo"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.LikeInfo"
                 },
                 "published_at": {
                     "type": "string"
@@ -6532,7 +6532,7 @@ const docTemplate = `{
                 "tags": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.BaseTag"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.BaseTag"
                     }
                 },
                 "title": {
@@ -6546,7 +6546,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.PostSummaryPage": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.PostSummaryPage": {
             "type": "object",
             "properties": {
                 "current_page": {
@@ -6555,7 +6555,7 @@ const docTemplate = `{
                 "list": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.PostSummary"
+                        "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.PostSummary"
                     }
                 },
                 "page_size": {
@@ -6569,7 +6569,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.Refresh": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.Refresh": {
             "type": "object",
             "properties": {
                 "access_token": {
@@ -6583,7 +6583,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.Register": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.Register": {
             "type": "object",
             "properties": {
                 "access_token": {
@@ -6596,11 +6596,11 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "user": {
-                    "$ref": "#/definitions/github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.UserProfile"
+                    "$ref": "#/definitions/github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.UserProfile"
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.SiteSettingDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.SiteSettingDetail": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -6629,7 +6629,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.TagDetail": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.TagDetail": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -6652,7 +6652,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.UnreadCount": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.UnreadCount": {
             "type": "object",
             "properties": {
                 "count": {
@@ -6660,7 +6660,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_scc749_nimbus-blog-api_internal_controller_http_v1_response.UserProfile": {
+        "github_com_QING520-MAKER_Xiaoqing-blog-api_internal_controller_http_v1_response.UserProfile": {
             "type": "object",
             "properties": {
                 "avatar": {
@@ -6722,8 +6722,8 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "",
 	BasePath:         "/api",
 	Schemes:          []string{"http", "https"},
-	Title:            "Nimbus Blog API",
-	Description:      "Nimbus Blog 后端 API（Admin + Public V1）。",
+	Title:            "Xiaoqing Blog API",
+	Description:      "Xiaoqing Blog 后端 API（Admin + Public V1）。",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",

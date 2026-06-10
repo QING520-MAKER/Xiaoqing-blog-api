@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo"
 	"github.com/openai/openai-go"
 	"github.com/openai/openai-go/option"
-	"github.com/scc749/nimbus-blog-api/internal/repo"
 )
 
 type llmWebAPI struct {

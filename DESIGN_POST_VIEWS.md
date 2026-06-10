@@ -30,12 +30,12 @@ Gen 已生成 `model.PostView` 和 `query.PostView`，业务层已通过 `repo/v
 
 ### 1.2 参考模式
 
-| 维度 | 点赞（PostLike） | 阅读量（PostView） |
-|------|-----------------|-------------------|
-| 触发频率 | 低（主动操作） | 高（每次访问） |
-| 精确性要求 | 高（不可重复） | 容忍秒级延迟 |
-| 去重逻辑 | 用户级唯一（Toggle） | IP + 时间窗口 |
-| 性能敏感度 | 低 | 高（热门文章并发） |
+| 维度       | 点赞（PostLike）     | 阅读量（PostView） |
+| ---------- | -------------------- | ------------------ |
+| 触发频率   | 低（主动操作）       | 高（每次访问）     |
+| 精确性要求 | 高（不可重复）       | 容忍秒级延迟       |
+| 去重逻辑   | 用户级唯一（Toggle） | IP + 时间窗口      |
+| 性能敏感度 | 低                   | 高（热门文章并发） |
 
 点赞使用同步事务模式。阅读量由于高频触发、低精确要求，需要异步缓冲。
 
@@ -143,11 +143,11 @@ import (
     "context"
     "time"
 
-    "github.com/scc749/nimbus-blog-api/internal/entity"
-    "github.com/scc749/nimbus-blog-api/internal/repo"
-    "github.com/scc749/nimbus-blog-api/internal/repo/persistence/gen/model"
-    "github.com/scc749/nimbus-blog-api/internal/repo/persistence/gen/query"
-    "github.com/scc749/nimbus-blog-api/pkg/logger"
+    "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/entity"
+    "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo"
+    "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo/persistence/gen/model"
+    "github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo/persistence/gen/query"
+    "github.com/QING520-MAKER/Xiaoqing-blog-api/pkg/logger"
     "gorm.io/gorm"
 )
 
@@ -517,10 +517,10 @@ Wire 的 cleanup 机制会自动处理：
 
 ### 5.3 内存估算
 
-| 场景 | 独立 IP | 文章数 | map 条目上限 | 内存 |
-|------|--------|--------|------------|------|
-| 小型博客 | ~1K | ~100 | ~10K | ~1 MB |
-| 中型博客 | ~10K | ~1K | ~100K | ~10 MB |
+| 场景     | 独立 IP | 文章数 | map 条目上限 | 内存   |
+| -------- | ------- | ------ | ------------ | ------ |
+| 小型博客 | ~1K     | ~100   | ~10K         | ~1 MB  |
+| 中型博客 | ~10K    | ~1K    | ~100K        | ~10 MB |
 
 完全可控，无需引入 Redis。
 
@@ -528,41 +528,41 @@ Wire 的 cleanup 机制会自动处理：
 
 ## 六、数据一致性
 
-| 场景 | 行为 | 影响 |
-|------|------|------|
-| 正常运行 | 每 30 秒刷盘 | `posts.views` 最多延迟 30 秒 |
-| 优雅退出（SIGTERM） | Wire cleanup → 排空 channel + flush | 几乎无损失 |
-| 崩溃（SIGKILL） | 缓冲区丢失 | 最多丢失 30 秒浏览记录 |
-| `views` 与 COUNT 不一致 | 允许 | 必要时可离线重算 |
+| 场景                    | 行为                                | 影响                         |
+| ----------------------- | ----------------------------------- | ---------------------------- |
+| 正常运行                | 每 30 秒刷盘                        | `posts.views` 最多延迟 30 秒 |
+| 优雅退出（SIGTERM）     | Wire cleanup → 排空 channel + flush | 几乎无损失                   |
+| 崩溃（SIGKILL）         | 缓冲区丢失                          | 最多丢失 30 秒浏览记录       |
+| `views` 与 COUNT 不一致 | 允许                                | 必要时可离线重算             |
 
 ---
 
 ## 七、文件清单
 
-| 层 | 文件 | 说明 |
-|----|------|------|
-| Entity | [post_view.go](internal/entity/post_view.go#L1-L12) | `PostView` 领域实体 |
-| Repo 接口 | [contracts.go](internal/repo/contracts.go#L121-L130) | `PostViewRepo` 接口 |
-| Repo 实现 | [post_view_buffered.go](internal/repo/viewbuffer/post_view_buffered.go#L1-L166) | 缓冲实现（channel + 去重 + 批量 flush） |
-| UseCase 接口 | [contracts.go](internal/usecase/contracts.go#L79-L104) | `Content.RecordView` 方法 |
-| UseCase 实现 | [content.go](internal/usecase/content/content.go#L444-L459) | 注入 `PostViewRepo` 并调用 `Record` |
-| Controller | [content.go](internal/controller/http/v1/content.go#L104-L174) | `getPost` 触发 `RecordView` |
-| DI | [wire.go](internal/app/wire.go#L180-L430) | Provider：`NewPostViewRepo` 并注入 `NewContentUseCase` |
-| DI | [wire_gen.go](internal/app/wire_gen.go#L1-L40) | Wire 生成产物 |
+| 层           | 文件                                                                            | 说明                                                   |
+| ------------ | ------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Entity       | [post_view.go](internal/entity/post_view.go#L1-L12)                             | `PostView` 领域实体                                    |
+| Repo 接口    | [contracts.go](internal/repo/contracts.go#L121-L130)                            | `PostViewRepo` 接口                                    |
+| Repo 实现    | [post_view_buffered.go](internal/repo/viewbuffer/post_view_buffered.go#L1-L166) | 缓冲实现（channel + 去重 + 批量 flush）                |
+| UseCase 接口 | [contracts.go](internal/usecase/contracts.go#L79-L104)                          | `Content.RecordView` 方法                              |
+| UseCase 实现 | [content.go](internal/usecase/content/content.go#L444-L459)                     | 注入 `PostViewRepo` 并调用 `Record`                    |
+| Controller   | [content.go](internal/controller/http/v1/content.go#L104-L174)                  | `getPost` 触发 `RecordView`                            |
+| DI           | [wire.go](internal/app/wire.go#L180-L430)                                       | Provider：`NewPostViewRepo` 并注入 `NewContentUseCase` |
+| DI           | [wire_gen.go](internal/app/wire_gen.go#L1-L40)                                  | Wire 生成产物                                          |
 
 ---
 
 ## 八、与现有架构的对齐
 
-| 架构规范 | 本设计的遵循方式 |
-|----------|---------------|
-| Controller → UseCase → Repo 数据流 | `getPost` → `content.RecordView` → `postViews.Record` |
-| Entity 纯结构体、无 tag | `entity.PostView` |
-| Repo 接口集中在 `contracts.go` | `PostViewRepo` 定义在 `repo/contracts.go` |
-| UseCase 纯业务逻辑，不管理生命周期 | `RecordView` 只做 entity 构造 + Repo 调用 |
-| 缓冲是 Repo 实现细节 | 参照 `repo/notification/`（组合 Repo + Hub），`repo/viewbuffer/` 封装缓冲策略 |
-| Wire cleanup 管理生命周期 | 参照 `NewPostgres`/`NewRedis` 返回 `(T, func())`，PostViewRepo 同理 |
-| `App` 只持有基础设施 | `App` 结构体不变，不引入 UseCase 依赖 |
-| Gen API 优先 | `CreateInBatches` / `UpdateSimple(Views.Add())` |
-| 文件命名规范 | `post_view_buffered.go`，`repo/viewbuffer/` 与 `repo/cache/`、`repo/notification/` 同级 |
-| Repo 可操作多表 | 参照 `PostLikeRepo` 同时操作 `PostLike` + `Post`，`bufferedPostViewRepo` 同时操作 `PostView` + `Post` |
+| 架构规范                           | 本设计的遵循方式                                                                                      |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Controller → UseCase → Repo 数据流 | `getPost` → `content.RecordView` → `postViews.Record`                                                 |
+| Entity 纯结构体、无 tag            | `entity.PostView`                                                                                     |
+| Repo 接口集中在 `contracts.go`     | `PostViewRepo` 定义在 `repo/contracts.go`                                                             |
+| UseCase 纯业务逻辑，不管理生命周期 | `RecordView` 只做 entity 构造 + Repo 调用                                                             |
+| 缓冲是 Repo 实现细节               | 参照 `repo/notification/`（组合 Repo + Hub），`repo/viewbuffer/` 封装缓冲策略                         |
+| Wire cleanup 管理生命周期          | 参照 `NewPostgres`/`NewRedis` 返回 `(T, func())`，PostViewRepo 同理                                   |
+| `App` 只持有基础设施               | `App` 结构体不变，不引入 UseCase 依赖                                                                 |
+| Gen API 优先                       | `CreateInBatches` / `UpdateSimple(Views.Add())`                                                       |
+| 文件命名规范                       | `post_view_buffered.go`，`repo/viewbuffer/` 与 `repo/cache/`、`repo/notification/` 同级               |
+| Repo 可操作多表                    | 参照 `PostLikeRepo` 同时操作 `PostLike` + `Post`，`bufferedPostViewRepo` 同时操作 `PostView` + `Post` |

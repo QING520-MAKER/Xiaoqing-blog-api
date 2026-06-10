@@ -8,10 +8,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/scc749/nimbus-blog-api/internal/entity"
-	"github.com/scc749/nimbus-blog-api/internal/repo"
-	"github.com/scc749/nimbus-blog-api/internal/usecase"
-	"github.com/scc749/nimbus-blog-api/internal/usecase/output"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/entity"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/output"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )

@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/scc749/nimbus-blog-api/internal/entity"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/entity"
 )
 
 type (

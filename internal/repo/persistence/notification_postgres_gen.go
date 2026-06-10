@@ -5,10 +5,10 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/scc749/nimbus-blog-api/internal/entity"
-	"github.com/scc749/nimbus-blog-api/internal/repo"
-	"github.com/scc749/nimbus-blog-api/internal/repo/persistence/gen/model"
-	"github.com/scc749/nimbus-blog-api/internal/repo/persistence/gen/query"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/entity"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo/persistence/gen/model"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/repo/persistence/gen/query"
 	"gorm.io/gorm"
 )
 

@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/scc749/nimbus-blog-api/internal/usecase/input"
-	"github.com/scc749/nimbus-blog-api/internal/usecase/output"
-	"github.com/scc749/nimbus-blog-api/pkg/ssehub"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/input"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/internal/usecase/output"
+	"github.com/QING520-MAKER/Xiaoqing-blog-api/pkg/ssehub"
 )
 
 type Auth interface {
